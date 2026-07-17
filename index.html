@@ -91,6 +91,9 @@ body{
 .brandmark svg{ width:38px; height:38px; display:block; }
 .brandmark span{ font-family:'Baloo',sans-serif; font-weight:700; font-size:1.28rem; color:var(--moon-body); text-shadow:0 2px 10px rgba(0,0,0,0.25); }
 
+.topbar-right{ display:flex; align-items:center; gap:1rem; }
+.navlink{ font-family:'Mukta',sans-serif; font-weight:700; font-size:.92rem; color:#EDE6FA; text-decoration:none; opacity:.9; border-bottom:2px solid transparent; padding-bottom:2px; }
+.navlink:hover{ opacity:1; border-bottom-color:var(--berry); }
 .langtoggle{ display:flex; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.28); border-radius:999px; padding:4px; gap:2px; backdrop-filter:blur(6px); }
 .langtoggle button{ font-family:'Mukta',sans-serif; font-weight:700; font-size:.86rem; border:none; background:transparent; color:#EDE6FA; padding:.4rem 1rem; border-radius:999px; cursor:pointer; transition:background .2s,color .2s; }
 .langtoggle button.active{ background:var(--berry); color:#fff; }
@@ -203,9 +206,12 @@ footer .berries{ width:64px; height:auto; margin:0 auto .6rem; display:block; }
 
       <span data-en="Moonberry House" data-mr="मूनबेरी हाऊस">Moonberry House</span>
     </div>
-    <div class="langtoggle" role="group" aria-label="Language">
-      <button type="button" class="active" data-lang="en">EN</button>
-      <button type="button" data-lang="mr">मराठी</button>
+    <div class="topbar-right">
+      <a class="navlink" href="/blog/" data-en="Blog" data-mr="Blog">Blog</a>
+      <div class="langtoggle" role="group" aria-label="Language">
+        <button type="button" class="active" data-lang="en">EN</button>
+        <button type="button" data-lang="mr">मराठी</button>
+      </div>
     </div>
   </div>
 
@@ -344,7 +350,7 @@ footer .berries{ width:64px; height:auto; margin:0 auto .6rem; display:block; }
     </div>
   </div>
 
-  <div class="notify">
+  <div class="notify" id="notify">
     <h2 data-en="Be the first to know" data-mr="सर्वात आधी कळवा">Be the first to know</h2>
     <p data-en="We'll send one little note the day our doors open. No spam, just moonlight." data-mr="आमचे दार उघडण्याच्या दिवशी आम्ही एक छोटीशी चिठ्ठी पाठवू. स्पॅम नाही, फक्त चांदणं.">We'll send one little note the day our doors open. No spam, just moonlight.</p>
     <form class="notify-form" id="notifyForm">
