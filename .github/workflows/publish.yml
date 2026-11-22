@@ -1,0 +1,30 @@
+name: Publish scheduled blog posts
+# Every morning (06:00 India time) publish any post whose date has arrived.
+# Also runs when you edit anything in content/ so edits go live straight away.
+on:
+  schedule:
+    - cron: '30 0 * * *'
+  push:
+    branches: [main]
+    paths: ['content/**', 'scripts/build-blog.mjs']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: blog-publish
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/build-blog.mjs
+      - name: Commit and push if anything changed
+        run: |
+          git config user.name "moonberry-bot"
+          git config user.email "moonberry-bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "nothing new to publish"; exit 0; fi
+          git commit -m "Publish blog posts for $(TZ=Asia/Kolkata date +%F)"
+          git pull --rebase origin main
+          git push origin HEAD:main

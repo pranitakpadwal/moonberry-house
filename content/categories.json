@@ -1,0 +1,65 @@
+{
+  "colour-creativity": {
+    "label": "Colour & Creativity",
+    "tagClass": "",
+    "intro": "What colour does for little minds, and ideas for colouring, drawing and making together.",
+    "cta": { "title": "Colour on the shelf", "text": "Our colouring books are made for quiet, screen-free hours, from big vehicles to African animals.", "button": "See the colouring books", "href": "/books/" }
+  },
+  "mindful-colouring": {
+    "label": "Mindful Colouring",
+    "tagClass": "tag-alt4",
+    "intro": "Colouring and painting for grown-ups and teens: calm, inner peace, letting go and gentle healing, no art skills needed.",
+    "note": "This post is for gentle self-care and general interest. It isn't medical or mental-health advice. If you're struggling, please talk to a doctor or a qualified professional.",
+    "cta": { "title": "A guided hour for you", "text": "Paint Your Peace is a painting journal for adults and teens with five gentle themes: letting go, stress relief, inner peace, self-love and hope.", "button": "See Paint Your Peace", "href": "/books/" }
+  },
+  "every-kind-of-mind": {
+    "label": "Every Kind of Mind",
+    "tagClass": "tag-alt",
+    "intro": "Creative play and calm for autistic, ADHD, sensory-sensitive and differently-wired children, and for the families who love them.",
+    "note": "The Moonberry House is a play-and-learning space, not a therapy or medical service. Every child is different, so please use this alongside the support your child already has and talk to their therapist, teacher or doctor about what fits.",
+    "cta": { "title": "Gentle by design", "text": "Our colour game has no timers, no scores and no wrong answers, with a Comfort button for calm mode and bigger text.", "button": "Try the colour game", "href": "/play/" }
+  },
+  "calm-feelings": {
+    "label": "Calm & Feelings",
+    "tagClass": "tag-alt2",
+    "intro": "Helping children name big feelings, settle their bodies and find their calm, one crayon at a time.",
+    "note": "This is general, everyday guidance, not medical or therapy advice. If a child's worries or behaviour are affecting daily life, please talk to a paediatrician, school counsellor or child psychologist.",
+    "cta": { "title": "Feelings, in colour", "text": "Colour-coding feelings gives little ones words for what's inside. Try it in our free colour game.", "button": "Play the colour game", "href": "/play/" }
+  },
+  "creative-play": {
+    "label": "Creative Play at Home",
+    "tagClass": "tag-alt3",
+    "intro": "Easy, low-mess, screen-free ideas for rainy afternoons, quiet evenings and long weekends.",
+    "cta": { "title": "More screen-free ideas", "text": "A tiny activity each evening can quietly change the week. Try our screen-free week for parents.", "button": "Try the screen-free week", "href": "/parents/" }
+  },
+  "journals-writing": {
+    "label": "Journals & Creativity",
+    "tagClass": "",
+    "intro": "Journaling, handwriting and drawing as ways for children (and grown-ups) to say what's hard to say.",
+    "cta": { "title": "A page that listens", "text": "Paint Your Peace pairs guided painting with reflection questions and mood check-ins.", "button": "See the journal", "href": "/books/" }
+  },
+  "bedtime-reading": {
+    "label": "Bedtime & Reading",
+    "tagClass": "tag-alt3",
+    "intro": "Winding down, reading aloud and bedtime routines that actually work.",
+    "cta": { "title": "A bedtime story", "text": "Mama Goose and the Missing Little Star is a gentle picture book about kindness and friendship, for ages 1 to 5.", "button": "See the picture book", "href": "/books/" }
+  },
+  "bilingual-parenting": {
+    "label": "Bilingual Parenting",
+    "tagClass": "tag-alt",
+    "intro": "Raising children with English and मराठी (or any two languages) without the guilt.",
+    "cta": { "title": "Stories in two languages", "text": "Colour-coded alphabets in English and मराठी make new letters friendlier. Try them in our colour game.", "button": "Play the colour game", "href": "/play/" }
+  },
+  "screens-focus": {
+    "label": "Focus & Screens",
+    "tagClass": "tag-alt2",
+    "intro": "Realistic, guilt-free ways to help children focus and find life beyond the screen.",
+    "cta": { "title": "The screen-free week", "text": "No bans, no guilt. One tiny activity each evening, ticked off at your own pace.", "button": "Try it this week", "href": "/parents/" }
+  },
+  "play-postcards": {
+    "label": "Play & Postcards",
+    "tagClass": "tag-alt3",
+    "intro": "Little rituals that make childhood feel special.",
+    "cta": { "title": "Screen-free, together", "text": "Small things done together add up. Find an evening activity to try.", "button": "See ideas for parents", "href": "/parents/" }
+  }
+}
