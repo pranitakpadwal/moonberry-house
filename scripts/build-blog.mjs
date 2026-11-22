@@ -16,10 +16,12 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://themoonberryhouse.com';
 const MAX_PER_DAY = 3;
 const PAGE_SIZE = 20;
-const AUTHOR = 'Pranita Padwal';
+const AUTHOR = 'The Moonberry Desk';   // house byline, matches /authors/#desk
+const DEFAULT_IMAGE = { url: 'https://themoonberryhouse.com/assets/blog/journal.jpg', width: 1600, height: 900 };
 const CHECK_ONLY = process.argv.includes('--check');
 
 const CATEGORIES = JSON.parse(read('content/categories.json'));
+const SITE_GRAPH = JSON.parse(read('content/site-graph.json'));   // Organization, WebSite, nav (shared with the hand-built pages)
 const LOGO = read('scripts/logo.svg.txt');
 const BERRIES = read('scripts/berries.svg.txt');
 
@@ -39,6 +41,7 @@ const fail = (msg) => { console.error((CHECK_ONLY ? 'ERROR: ' : '::warning::') +
 const TODAY = process.env.TODAY ||
   new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kolkata' }).format(new Date());
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const addDays = (iso, n) => { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
 const human = (iso) => { const [y, m, d] = iso.split('-').map(Number); return `${d} ${MONTHS[m - 1]} ${y}`; };
 
 // ---------- front matter ----------
@@ -126,7 +129,7 @@ const plain = (s) => s.replace(/\*\*?/g, '').replace(/\[([^\]]+)\]\([^)]*\)/g, '
 const FOOT = `<footer class="sitefoot">
   ${BERRIES}
   <p>The Moonberry House · colour books, journals &amp; stories for every kind of mind</p>
-  <p><a href="${SITE}">themoonberryhouse.com</a></p>
+  <p><a href="${SITE}">themoonberryhouse.com</a> · <a href="/privacy/">Privacy &amp; cookies</a> · <a href="#" data-cookie-settings>Cookie settings</a> · <a href="/authors/">Our writers</a></p>
 </footer>`;
 
 function head({ title, description, canonical, type, keywords, jsonld, published, modified }) {
@@ -149,12 +152,17 @@ ${keywords ? `<meta name="keywords" content="${esc(keywords)}">\n` : ''}<link re
 <meta property="og:title" content="${esc(title.replace(/ \| The Moonberry Journal$/, ''))}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${canonical}">
-<meta property="og:image" content="${SITE}/og-image.png">
+<meta property="og:image" content="${DEFAULT_IMAGE.url}">
+<meta property="og:image:width" content="${DEFAULT_IMAGE.width}">
+<meta property="og:image:height" content="${DEFAULT_IMAGE.height}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${DEFAULT_IMAGE.url}">
 ${published ? `<meta property="article:published_time" content="${published}">\n<meta property="article:modified_time" content="${modified || published}">\n<meta property="article:author" content="${AUTHOR}">\n` : ''}<script type="application/ld+json">
 ${JSON.stringify(jsonld, null, 2)}
 </script>
 <link rel="stylesheet" href="/assets/blog.css">
+<meta name="google-site-verification" content="DkJ-5eQgaqEalvf2IYY3YDG_DGmVP6lji345Xc6qkvM" />
+<script src="/assets/consent.js" defer></script>
 </head>`;
 }
 const masthead = (inner, back = '<a class="backlink" href="/blog/">← All posts</a>') => `<body>
@@ -213,16 +221,10 @@ const timeline = [...live.map((p) => ({ ...p, legacy: false })), ...legacy]
   .sort((a, b) => (a.date === b.date ? (a.slug < b.slug ? 1 : -1) : a.date < b.date ? 1 : -1));
 
 // ---------- post pages ----------
-const ORG = {
-  '@type': 'Organization', '@id': `${SITE}/#org`, name: 'The Moonberry House', url: SITE,
-  logo: { '@type': 'ImageObject', url: `${SITE}/apple-touch-icon.png` },
-  description: 'Colouring books, a painting journal and picture books for every kind of mind, in English and Marathi.',
-  founder: { '@id': `${SITE}/about/#pranita` },
-};
-const PERSON = {
-  '@type': 'Person', '@id': `${SITE}/about/#pranita`, name: AUTHOR, url: `${SITE}/about/`,
-  jobTitle: 'Founder, The Moonberry House', worksFor: { '@id': `${SITE}/#org` },
-};
+const ORG_REF = { '@id': `${SITE}/#organization` };
+const DESK = { '@type': 'Organization', name: AUTHOR, url: `${SITE}/authors/#desk` };
+const BLOG_REF = { '@id': `${SITE}/blog/#blog` };
+const IMAGE_OBJ = { '@type': 'ImageObject', ...DEFAULT_IMAGE };
 
 function postPage(p) {
   const cat = CATEGORIES[p.category];
@@ -235,20 +237,19 @@ function postPage(p) {
   const faq = extractFaq(p.body);
   const modified = p.updated || p.date;
   const graph = [
-    ORG, PERSON,
+    ...SITE_GRAPH,
     {
-      '@type': 'BlogPosting', '@id': `${url}#post`, headline: p.title, description: p.description, abstract: p.summary,
-      datePublished: p.date, dateModified: modified, inLanguage: 'en-IN', wordCount: p.words,
-      articleSection: cat.label, keywords: p.keywords,
-      author: { '@id': `${SITE}/about/#pranita` }, publisher: { '@id': `${SITE}/#org` },
-      image: `${SITE}/og-image.png`, mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-      isPartOf: { '@type': 'Blog', '@id': `${SITE}/blog/`, name: 'The Moonberry Journal' },
+      '@type': 'Article', '@id': `${url}#article`, headline: p.title, description: p.description, abstract: p.summary,
+      image: IMAGE_OBJ, datePublished: p.date, dateModified: modified, author: DESK, publisher: ORG_REF,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': url }, isPartOf: BLOG_REF,
+      articleSection: cat.label, keywords: p.keywords, inLanguage: 'en', wordCount: p.words,
+      articleBody: plain(p.body).replace(/^[#:>-]+\s*/gm, '').replace(/\s+/g, ' ').trim(),
       speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.quick'] },
     },
     {
-      '@type': 'BreadcrumbList', itemListElement: [
+      '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-        { '@type': 'ListItem', position: 2, name: 'The Moonberry Journal', item: SITE + '/blog/' },
+        { '@type': 'ListItem', position: 2, name: 'Journal', item: SITE + '/blog/' },
         { '@type': 'ListItem', position: 3, name: cat.label, item: `${SITE}/blog/category/${p.category}/` },
         { '@type': 'ListItem', position: 4, name: p.title, item: url },
       ],
@@ -265,7 +266,7 @@ function postPage(p) {
     keywords: p.keywords, jsonld: { '@context': 'https://schema.org', '@graph': graph }, published: p.date, modified,
   }) + '\n' + masthead(`${tagHtml(cat)}
     <h1 class="posttitle">${esc(p.title)}</h1>
-    <p class="meta"><span>Published <time datetime="${p.date}">${human(p.date)}</time></span>${modified !== p.date ? `<span>Updated <time datetime="${modified}">${human(modified)}</time></span>` : ''}<span>${p.read} min read</span><span>By <a class="byline" href="/about/">${AUTHOR}</a>, founder of The Moonberry House</span></p>`) + `
+    <p class="meta"><span>Published <time datetime="${p.date}">${human(p.date)}</time></span>${modified !== p.date ? `<span>Updated <time datetime="${modified}">${human(modified)}</time></span>` : ''}<span>${p.read} min read</span><span>By <a class="byline" href="/authors/#desk">${AUTHOR}</a></span></p>`) + `
 
 <main class="wrap">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Journal</a> › <a href="/blog/category/${p.category}/">${esc(cat.label)}</a></nav>
@@ -316,7 +317,16 @@ function listing({ items, baseUrl, pageNo, pages, title, intro, active, canonica
   return head({
     title: `${title} | Kids' Colouring, Calm & Storytelling Blog | The Moonberry House`,
     description: canonicalDesc, canonical: url, type: 'website',
-    jsonld: { '@context': 'https://schema.org', '@type': 'Blog', name: 'The Moonberry Journal', url: `${SITE}/blog/`, publisher: { '@type': 'Organization', name: 'The Moonberry House', logo: `${SITE}/apple-touch-icon.png` } },
+    jsonld: { '@context': 'https://schema.org', '@graph': [
+      ...SITE_GRAPH,
+      { '@type': 'Blog', '@id': `${SITE}/blog/#blog`, name: 'The Moonberry Journal', url: `${SITE}/blog/`, description: canonicalDesc, inLanguage: 'en', publisher: ORG_REF, image: IMAGE_OBJ },
+      { '@type': 'CollectionPage', '@id': `${url}#page`, name: title, url, isPartOf: BLOG_REF },
+      { '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+        { '@type': 'ListItem', position: 2, name: 'Journal', item: SITE + '/blog/' },
+        ...(active ? [{ '@type': 'ListItem', position: 3, name: title, item: url }] : []),
+      ] },
+    ] },
   }) + '\n' + masthead(`<h1 class="blogtitle">${esc(title)}</h1>
     <p class="tagline">${esc(intro)}</p>`, '<a class="backlink" href="/">← Home</a>') + `
 
@@ -359,16 +369,40 @@ for (const [key, cat] of Object.entries(CATEGORIES)) {
   });
 }
 
-// sitemap
-const STATIC = ['/', '/play/', '/everyone/', '/grownups/', '/parents/', '/books/', '/about/', '/blog/'];
+// sitemap.xml (keeps the lastmod already on file for pages this script doesn't own)
+const existing = {};
+try { for (const m of read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>\s*(?:<lastmod>([^<]+)<\/lastmod>)?/g)) existing[m[1].replace(SITE, '')] = m[2]; } catch {}
+const STATIC = ['/', '/play/', '/everyone/', '/grownups/', '/parents/', '/books/', '/about/', '/authors/', '/privacy/', '/blog/',
+  '/books/mama-goose-and-the-missing-little-star/', '/books/halloween-coloring-book/', '/books/my-big-vehicle-coloring-and-activity-book/',
+  '/books/safari-snapshots/', '/books/paint-your-peace/'];
+const newest = timeline[0] ? timeline[0].date : TODAY;
 const urls = [
-  ...STATIC.map((u) => ({ loc: u })),
-  ...Object.keys(CATEGORIES).filter((k) => timeline.some((p) => p.category === k)).map((k) => ({ loc: `/blog/category/${k}/` })),
-  ...timeline.map((p) => ({ loc: `/blog/${p.slug}`, lastmod: p.date })),
+  ...STATIC.map((u) => ({ loc: u, lastmod: u === '/blog/' ? newest : existing[u] || TODAY })),
+  ...Object.keys(CATEGORIES).filter((k) => timeline.some((p) => p.category === k)).map((k) => ({ loc: `/blog/category/${k}/`, lastmod: timeline.find((p) => p.category === k).date })),
+  ...timeline.map((p) => ({ loc: `/blog/${p.slug}`, lastmod: p.updated || p.date })),
 ];
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((u) => `  <url><loc>${SITE}${u.loc}</loc>${u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : ''}</url>`).join('\n')}
+${urls.map((u) => `  <url>\n    <loc>${SITE}${u.loc}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n  </url>`).join('\n')}
+</urlset>
+`);
+
+// news-sitemap.xml: the existing posts plus anything published in the last 2 days (Google News's window)
+const cutoff = addDays(TODAY, -2);
+const newsItems = timeline.filter((p) => p.legacy || p.date >= cutoff).sort((a, b) => (a.date < b.date ? 1 : -1));
+write('news-sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+${newsItems.map((p) => `  <url>
+    <loc>${SITE}/blog/${p.slug}</loc>
+    <news:news>
+      <news:publication>
+        <news:name>The Moonberry Journal</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>${p.date}</news:publication_date>
+      <news:title>${esc(p.title)}</news:title>
+    </news:news>
+  </url>`).join('\n')}
 </urlset>
 `);
 
@@ -411,6 +445,7 @@ write('llms.txt', `# The Moonberry House
 - [For grown-ups](${SITE}/grownups/): quiet creative rituals for adults
 - [For parents](${SITE}/parents/): a screen-free week of small activities
 - [About](${SITE}/about/): the founder, Pranita Padwal
+- [Our writers](${SITE}/authors/): who writes the Journal
 - [Blog](${SITE}/blog/): The Moonberry Journal (RSS: ${SITE}/feed.xml)
 
 ## Blog posts

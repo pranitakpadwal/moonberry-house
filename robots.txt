@@ -1,26 +1,138 @@
+# robots.txt for https://themoonberryhouse.com
+# Everything public is welcome: search engines, AI assistants and AI search/answer engines.
+
+# ---- All crawlers (default) ----
 User-agent: *
 Allow: /
 
-# AI search and answer engines are welcome
+# ---- Search engines ----
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+User-agent: MojeekBot
+Allow: /
+
+User-agent: Qwantify
+Allow: /
+
+# ---- AI assistants, answer engines and LLM crawlers ----
 User-agent: GPTBot
 Allow: /
-User-agent: OAI-SearchBot
-Allow: /
+
 User-agent: ChatGPT-User
 Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ClaudeBot
 Allow: /
-User-agent: Claude-SearchBot
+
+User-agent: Claude-Web
 Allow: /
+
 User-agent: Claude-User
 Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
+
 User-agent: Perplexity-User
 Allow: /
+
 User-agent: Google-Extended
 Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: cohere-training-data-crawler
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Timpibot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+# ---- Sitemaps ----
 Sitemap: https://themoonberryhouse.com/sitemap.xml
+Sitemap: https://themoonberryhouse.com/news-sitemap.xml
