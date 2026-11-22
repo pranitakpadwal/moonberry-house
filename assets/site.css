@@ -270,8 +270,15 @@ html.calm .page-hero{background:var(--night-mid);}
 .band .inner{display:flex;flex-wrap:wrap;gap:1.4rem;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--paper-edge);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.8rem 2rem;}
 .band h2{font-size:clamp(1.5rem,3.6vw,2rem);margin-bottom:.3rem;}
 .band p{margin:0;color:var(--ink-soft);max-width:52ch;}
-.books{display:flex;flex-wrap:wrap;justify-content:center;gap:1.3rem;margin-top:2.2rem;}
-.book{flex:0 1 240px;min-width:220px;background:#fff;border:1px solid var(--paper-edge);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;}
+.shelf-group{margin-top:3rem;text-align:left;}
+.shelf-group h3{font-size:1.6rem;margin:0;}
+.shelf-group .sub{color:var(--ink-soft);margin:0 0 1.2rem;}
+.books{display:grid;grid-template-columns:repeat(6,1fr);gap:1.5rem;}
+.book.wide{grid-column:span 3;flex-direction:row;}
+.book.wide .cover{flex:0 0 44%;aspect-ratio:auto;}
+.book.wide .body{justify-content:center;}
+.follow{display:inline-flex;align-items:center;gap:.5rem;}
+.book{grid-column:span 2;background:#fff;border:1px solid var(--paper-edge);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;}
 .cover{aspect-ratio:4/5;display:grid;place-items:center;padding:.8rem;}
 .cover img{width:100%;height:100%;object-fit:contain;border-radius:6px;box-shadow:0 6px 18px rgba(46,36,64,.18);}
 .tagline{font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--berry-deep);}
@@ -280,3 +287,5 @@ html.calm .page-hero{background:var(--night-mid);}
 .book p{margin:0;color:var(--ink-soft);font-size:1rem;flex:1;}
 .book .btn{margin-top:.6rem;}
 .bk1 .cover{background:#FFE0E8;}.bk2 .cover{background:#FFF0C7;}.bk3 .cover{background:#D9F0FA;}.bk4 .cover{background:#D8F1E5;}.bk5 .cover{background:#E8DDF7;}
+@media (max-width:900px){.book{grid-column:span 3;}.book.wide{grid-column:span 6;}}
+@media (max-width:600px){.book,.book.wide{grid-column:span 6;}.book.wide{flex-direction:column;}.book.wide .cover{aspect-ratio:4/5;flex:none;}}
