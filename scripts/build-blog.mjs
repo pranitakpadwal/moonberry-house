@@ -163,10 +163,17 @@ ${JSON.stringify(jsonld, null, 2)}
 <link rel="stylesheet" href="/assets/blog.css">
 <meta name="google-site-verification" content="DkJ-5eQgaqEalvf2IYY3YDG_DGmVP6lji345Xc6qkvM" />
 <script src="/assets/consent.js" defer></script>
+<link rel="stylesheet" href="/assets/nav.css">
+<script src="/assets/nav.js" defer></script>
 </head>`;
 }
+const NAV_LINKS = [['Play', '/play/'], ['For every mind', '/everyone/'], ['Grown-ups', '/grownups/'], ['Parents', '/parents/'], ['Books', '/books/'], ['Journal', '/blog/']];
+// Site-wide menu (styles: /assets/nav.css, behaviour: /assets/nav.js). Journal is always the current section here.
+const SITE_NAV = `<a class="sn-skip" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
+<header class="sn-header"><div class="sn-bar"><a class="sn-brand" href="/" aria-label="The Moonberry House"><img src="/favicon.svg" alt="" width="36" height="36"><span>The Moonberry House</span></a><nav class="sn-nav" id="snNav" aria-label="Main">${NAV_LINKS.map(([n, u]) => `<a href="${u}"${u === '/blog/' ? ' aria-current="page"' : ''}>${n}</a>`).join('')}</nav><button class="sn-menu" id="snMenu" type="button" aria-expanded="false" aria-controls="snNav" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button></div></header>
+`;
 const masthead = (inner, back = '<a class="backlink" href="/blog/">← All posts</a>') => `<body>
-<div class="masthead">
+${SITE_NAV}<div class="masthead">
   <div class="masthead-inner">
     <div class="topbar">
       <a class="brandmark" href="/">
@@ -268,7 +275,7 @@ function postPage(p) {
     <h1 class="posttitle">${esc(p.title)}</h1>
     <p class="meta"><span>Published <time datetime="${p.date}">${human(p.date)}</time></span>${modified !== p.date ? `<span>Updated <time datetime="${modified}">${human(modified)}</time></span>` : ''}<span>${p.read} min read</span><span>By <a class="byline" href="/authors/#desk">${AUTHOR}</a></span></p>`) + `
 
-<main class="wrap">
+<main class="wrap" id="main">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Journal</a> › <a href="/blog/category/${p.category}/">${esc(cat.label)}</a></nav>
   <article>
     <div class="quick"><strong>Quick answer</strong><p>${inline(p.summary)}</p></div>
@@ -330,7 +337,7 @@ function listing({ items, baseUrl, pageNo, pages, title, intro, active, canonica
   }) + '\n' + masthead(`<h1 class="blogtitle">${esc(title)}</h1>
     <p class="tagline">${esc(intro)}</p>`, '<a class="backlink" href="/">← Home</a>') + `
 
-<main class="wrap">
+<main class="wrap" id="main">
   ${chips(active)}
   <div class="postgrid">
 ${slice.map(card).join('\n')}

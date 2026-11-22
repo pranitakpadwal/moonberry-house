@@ -1,0 +1,19 @@
+/* Site menu for the blog pages (self-contained so it does not disturb the blog's own styles) */
+.sn-header{position:sticky;top:0;z-index:50;background:rgba(36,27,78,.97);backdrop-filter:blur(8px);color:#FFF6E0;font-family:'Mukta',system-ui,sans-serif;}
+.sn-bar{max-width:1080px;margin:0 auto;padding:0 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:64px;}
+.sn-brand{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:#FFF6E0;font:800 1.2rem 'Baloo',sans-serif;white-space:nowrap;}
+.sn-brand img{width:36px;height:36px;display:block;}
+.sn-nav{display:flex;align-items:center;gap:.3rem;}
+.sn-nav a{color:#EDE6FA;text-decoration:none;font-weight:600;font-size:1.05rem;padding:.5rem .8rem;border-radius:999px;}
+.sn-nav a:hover{background:rgba(255,255,255,.12);color:#fff;}
+.sn-nav a[aria-current="page"]{background:rgba(255,255,255,.18);color:#fff;}
+.sn-menu{display:none;min-width:44px;min-height:44px;border:0;border-radius:12px;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;align-items:center;justify-content:center;}
+.sn-header a:focus-visible,.sn-menu:focus-visible{outline:3px solid #FFC857;outline-offset:3px;}
+.masthead .brandmark{display:none;}
+@media (max-width:900px){
+  .sn-menu{display:inline-flex;}
+  .sn-nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:#241B4E;padding:.6rem 1.4rem 1rem;}
+  .sn-nav.open{display:flex;}
+  .sn-nav a{padding:.8rem 1rem;}
+}
+@media (max-width:480px){.sn-brand{font-size:1rem;gap:.4rem;}.sn-brand img{width:30px;height:30px;}}
