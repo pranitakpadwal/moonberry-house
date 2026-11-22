@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Colour Game | The Moonberry House</title>
+<meta name="description" content="A free, calm colour-by-number game for kids and grown-ups. No timers, no scores. Print it blank and colour with real crayons. English &amp; मराठी.">
+<link rel="canonical" href="https://themoonberryhouse.com/play/">
+<meta name="theme-color" content="#3D2E72">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Moonberry House">
+<meta property="og:title" content="The Colour Game">
+<meta property="og:description" content="A free, calm colour-by-number game for kids and grown-ups. No timers, no scores. Print it blank and colour with real crayons. English &amp; मराठी.">
+<meta property="og:url" content="https://themoonberryhouse.com/play/">
+<meta property="og:image" content="https://themoonberryhouse.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main" data-en="Skip to content" data-mr="मजकुराकडे जा">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="The Moonberry House"><img src="/favicon.svg" alt="" width="36" height="36"><span>The Moonberry House</span></a>
+    <nav class="nav" id="nav" aria-label="Main"><a href="/play/" aria-current="page" data-en="Play" data-mr="खेळा">Play</a><a href="/everyone/" data-en="For every mind" data-mr="प्रत्येक मनासाठी">For every mind</a><a href="/grownups/" data-en="Grown-ups" data-mr="मोठ्यांसाठी">Grown-ups</a><a href="/parents/" data-en="Parents" data-mr="पालकांसाठी">Parents</a><a href="/books/" data-en="Books" data-mr="पुस्तकं">Books</a><a href="/blog/" data-en="Journal" data-mr="जर्नल">Journal</a></nav>
+    <div class="tools">
+      <div class="langtoggle" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="active" aria-pressed="true">EN</button>
+        <button type="button" data-lang="mr" lang="mr" aria-pressed="false">मरा</button>
+      </div>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero on-dark"><svg class="stars" id="stars" viewBox="0 0 100 60" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><div class="wrap"><span class="eyebrow" data-en="Play" data-mr="खेळा">Play</span><h1 data-en="The colour game" data-mr="रंग खेळ">The colour game</h1><p class="lede" data-en="Colour-coding play for little hands and curious minds. Tap, paint, print and repeat." data-mr="छोट्या हातांसाठी आणि जिज्ञासू मनांसाठी रंग-संकेत खेळ. टॅप करा, रंगवा, छापा आणि पुन्हा करा.">Colour-coding play for little hands and curious minds. Tap, paint, print and repeat.</p></div><svg class="hill" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,70 L0,70 Z" fill="#FFFBF2"/></svg></section>
+<section id="play">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow berry" data-en="Try it right now" data-mr="आत्ताच करून पहा">Try it right now</span>
+      <h2 data-en="Paint the moonberry night" data-mr="मूनबेरी रात्र रंगवा">Paint the moonberry night</h2>
+      <p class="lede" data-en="Every shape has a number. Pick the colour with the same number, then tap the shape. That&#x27;s colour-coding. No timer, no score, no wrong answers, only gentle nudges." data-mr="प्रत्येक आकारावर एक क्रमांक आहे. त्याच क्रमांकाचा रंग निवडा आणि आकारावर टॅप करा. यालाच रंग-संकेत म्हणतात. टायमर नाही, गुण नाहीत, &#x27;चूक&#x27; नाही – फक्त हळुवार सूचना.">Every shape has a number. Pick the colour with the same number, then tap the shape. That's colour-coding. No timer, no score, no wrong answers, only gentle nudges.</p>
+    </div>
+    <div class="play-grid">
+      <div class="canvas">
+        <svg id="scene" viewBox="0 0 400 280" role="group" aria-label="Colour by number picture: a house under the moon"></svg>
+        <div class="print-only"><div class="legend" id="legend"></div><p>themoonberryhouse.com</p></div>
+      </div>
+      <div class="panel">
+        <div class="modes" role="group" aria-label="Mode">
+          <button type="button" id="modeGuided" aria-pressed="true" data-en="Colour by number" data-mr="क्रमांकानुसार रंग">Colour by number</button>
+          <button type="button" id="modeFree" aria-pressed="false" data-en="Free paint" data-mr="मुक्त रंगकाम">Free paint</button>
+        </div>
+        <h3 id="palLabel" data-en="1. Pick a colour" data-mr="१. रंग निवडा">1. Pick a colour</h3>
+        <div class="palette" id="palette" role="radiogroup" aria-labelledby="palLabel"></div>
+        <h3 data-en="2. Tap a shape" data-mr="२. आकारावर टॅप करा">2. Tap a shape</h3>
+        <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+        <div class="win" id="win"></div>
+        <div class="actions">
+          <button class="btn btn-line btn-sm" id="resetBtn" type="button" data-en="Start again" data-mr="पुन्हा सुरू करा">Start again</button>
+          <button class="btn btn-line btn-sm" id="printBtn" type="button" data-en="Print blank page" data-mr="कोरं पान छापा">Print blank page</button>
+        </div>
+        <p class="tiny" style="margin-top:.9rem" data-en="Tip: press keys 1 to 6 to pick colours, Tab to move between shapes, Enter to paint." data-mr="सूचना: १ ते ६ कळा दाबून रंग निवडा, आकारांमध्ये जाण्यासाठी Tab, रंगवण्यासाठी Enter.">Tip: press keys 1 to 6 to pick colours, Tab to move between shapes, Enter to paint.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="learn">
+  <div class="wrap center">
+    <span class="eyebrow sky" data-en="Why colour-coding?" data-mr="रंग-संकेत का?">Why colour-coding?</span>
+    <h2 data-en="One simple idea, four big skills" data-mr="एक साधी कल्पना, चार मोठी कौशल्यं">One simple idea, four big skills</h2>
+    <p class="lede" data-en="When a colour stands for a number, a letter or a feeling, the brain gets a friendly shortcut for remembering and sorting things out." data-mr="जेव्हा एखादा रंग आकडा, अक्षर किंवा भावना दर्शवतो, तेव्हा लक्षात ठेवायला आणि गोष्टी लावायला मेंदूला एक सोपा मार्ग मिळतो.">When a colour stands for a number, a letter or a feeling, the brain gets a friendly shortcut for remembering and sorting things out.</p>
+    <div class="learn-grid" style="text-align:left">
+      <div class="learn l1"><div class="big">1 2 3</div><h3 data-en="Numbers &amp;amp; counting" data-mr="आकडे आणि मोजणी">Numbers &amp; counting</h3><p data-en="Matching numbers to colours builds number sense, one shape at a time." data-mr="आकड्यांना रंगांशी जोडल्याने एकेका आकारासोबत संख्याज्ञान पक्कं होतं.">Matching numbers to colours builds number sense, one shape at a time.</p></div>
+      <div class="learn l2"><div class="big">◐ ▲ ■</div><h3 data-en="Patterns &amp;amp; logic" data-mr="नमुने आणि तर्क">Patterns &amp; logic</h3><p data-en="Following a code is the first step to sequencing, sorting and problem-solving." data-mr="संकेत पाळणं ही क्रम लावणं, वर्गीकरण आणि प्रश्न सोडवण्याची पहिली पायरी आहे.">Following a code is the first step to sequencing, sorting and problem-solving.</p></div>
+      <div class="learn l3"><div class="big">अ A</div><h3 data-en="Letters &amp;amp; words" data-mr="अक्षरं आणि शब्द">Letters &amp; words</h3><p data-en="Colour-coded alphabets in English and मराठी make new letters easier to recognise." data-mr="इंग्रजी आणि मराठीतील रंगीत वर्णमाला नवी अक्षरं ओळखायला सोपी करतात.">Colour-coded alphabets in English and मराठी make new letters easier to recognise.</p></div>
+      <div class="learn l4"><div class="big">☺</div><h3 data-en="Feelings &amp;amp; focus" data-mr="भावना आणि एकाग्रता">Feelings &amp; focus</h3><p data-en="Slow, repetitive colouring steadies the hands and the mood. Naming feelings by colour gives little ones words for them." data-mr="हळू, पुनरावृत्तीचं रंगकाम हात आणि मन स्थिर करतं. भावनांना रंगांची नावं दिल्याने छोट्यांना त्यांच्यासाठी शब्द मिळतात.">Slow, repetitive colouring steadies the hands and the mood. Naming feelings by colour gives little ones words for them.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p><strong>The Moonberry House</strong> · <span data-en="colour, calm &amp;amp; curiosity for every age" data-mr="प्रत्येक वयासाठी रंग, शांतता आणि कुतूहल">colour, calm &amp; curiosity for every age</span></p>
+    <p><a href="/play/" data-en="Play" data-mr="खेळा">Play</a> · <a href="/everyone/" data-en="For every mind" data-mr="प्रत्येक मनासाठी">For every mind</a> · <a href="/grownups/" data-en="Grown-ups" data-mr="मोठ्यांसाठी">Grown-ups</a> · <a href="/parents/" data-en="Parents" data-mr="पालकांसाठी">Parents</a> · <a href="/books/" data-en="Books" data-mr="पुस्तकं">Books</a> · <a href="/blog/" data-en="Journal" data-mr="जर्नल">Journal</a> · <a href="/about/" data-en="About" data-mr="आमच्याबद्दल">About</a></p>
+    <p><a href="mailto:hello@themoonberryhouse.com">hello@themoonberryhouse.com</a></p>
+    <p>© <span id="yr">2026</span> The Moonberry House</p>
+  </div>
+</footer>
+<div class="comfort">
+  <div class="comfort-panel" id="comfortPanel" role="group" aria-labelledby="comfortTitle">
+    <h2 id="comfortTitle" data-en="Comfort settings" data-mr="आराम सेटिंग्ज">Comfort settings</h2>
+    <label><input type="checkbox" id="optCalm"> <span data-en="Calm mode (no motion)" data-mr="शांत मोड (हालचाल नाही)">Calm mode (no motion)</span></label>
+    <label><input type="checkbox" id="optBig"> <span data-en="Bigger text" data-mr="मोठी अक्षरं">Bigger text</span></label>
+    <label><input type="checkbox" id="optRoomy"> <span data-en="Roomier spacing" data-mr="जास्त अंतर">Roomier spacing</span></label>
+  </div>
+  <button class="comfort-btn" id="comfortBtn" type="button" aria-expanded="false" aria-controls="comfortPanel" data-en="Comfort" data-mr="आराम">Comfort</button>
+</div>
+<noscript><p style="text-align:center;padding:1rem;background:#FFF0C7">The colour game and week planner need JavaScript. Everything else works without it.</p></noscript>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
