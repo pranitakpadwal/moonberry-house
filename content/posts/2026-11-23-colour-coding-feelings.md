@@ -4,6 +4,7 @@ description: Young children feel big things long before they can name them. A si
 category: calm-feelings
 date: 2026-11-23
 read: 5
+summary: A simple colour chart helps young children name feelings before they have the words. Sit down together, let your child choose a colour for each feeling, colour in a circle for each, and use the chart lightly in the moment. There are no right answers.
 keywords: teaching kids emotions, colour feelings chart, emotional vocabulary, kids big feelings, feelings activities for children
 ---
 A four-year-old who's furious and a four-year-old who's frightened can look exactly the same from the outside: red-faced, loud, in tears. Inside, they're very different, but they usually can't tell you which one it is. They don't have the words yet.
@@ -47,4 +48,18 @@ This is an everyday tool for helping children express themselves, not a way to d
 
 Naming a feeling doesn't make it vanish, but it makes it smaller and less scary, and it tells a child that whatever they feel, they're not alone with it.
 
-— Pranita
+## Frequently asked questions
+
+### At what age can I start a feelings colour chart?
+Many children around three or four can start choosing colours for simple feelings like happy, sad and angry, with help from an adult. Older children can add more feelings and mix colours.
+
+### What if my child chooses unexpected colours for feelings?
+That is completely fine. The chart belongs to your child, so if anger is blue, then in your house anger is blue. Colour choices are not a hidden code to decode.
+
+### Can colour-coding feelings help with big emotions?
+It can give children a way to show what they feel before they can say it, which often makes a feeling feel smaller and less scary. It is an everyday tool, not a treatment.
+
+### When should I seek extra support?
+If your child seems persistently distressed, anxious or withdrawn, talk to your paediatrician, a school counsellor or a child psychologist.
+
+Warmly, Pranita

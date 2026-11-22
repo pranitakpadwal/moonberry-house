@@ -31,7 +31,9 @@ function write(p, s) {
   fs.writeFileSync(f, s);
 }
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const fail = (msg) => { console.error('ERROR: ' + msg); process.exitCode = 1; };
+// In publish mode a bad post is skipped with a warning so the rest still go out.
+// With --check any problem fails the run.
+const fail = (msg) => { console.error((CHECK_ONLY ? 'ERROR: ' : '::warning::') + msg); if (CHECK_ONLY) process.exitCode = 1; };
 
 // ---------- today (Asia/Kolkata) ----------
 const TODAY = process.env.TODAY ||
@@ -75,7 +77,9 @@ function renderBlocks(lines, state) {
       i++;
       out.push(`<div class="tips"><h3>${inline(title)}</h3>${renderBlocks(inner, state)}</div>`);
     } else if ((m = line.match(/^(#{2,3})\s+(.*)$/))) {
-      out.push(`<h${m[1].length}>${inline(m[2])}</h${m[1].length}>`); i++;
+      const id = m[2].toLowerCase().replace(/&/g, 'and').replace(/['’?]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      if (m[1].length === 2) state.toc.push({ id, text: m[2] });
+      out.push(`<h${m[1].length} id="${id}">${inline(m[2])}</h${m[1].length}>`); i++;
     } else if (line.startsWith('> ')) {
       const q = [];
       while (i < lines.length && lines[i].startsWith('> ')) q.push(lines[i++].slice(2));
@@ -88,7 +92,7 @@ function renderBlocks(lines, state) {
       const items = [];
       while (i < lines.length && /^\d+[.)]\s+/.test(lines[i])) items.push(lines[i++].replace(/^\d+[.)]\s+/, ''));
       out.push(`<ol>${items.map((x) => `<li>${inline(x)}</li>`).join('')}</ol>`);
-    } else if (/^— /.test(line) && i === lines.length - 1) {
+    } else if (/^Warmly, Pranita$/.test(line)) {
       out.push(`<p class="signoff">${inline(line)}</p>`); i++;
     } else {
       const p = [];
@@ -100,7 +104,23 @@ function renderBlocks(lines, state) {
   }
   return out.join('\n    ');
 }
-const renderMarkdown = (md) => renderBlocks(md.split('\n'), { first: true });
+function renderMarkdown(md) {
+  const state = { first: false, toc: [] };   // the quick-answer box plays the lede role
+  const html = renderBlocks(md.split('\n'), state);
+  return { html, toc: state.toc };
+}
+
+// FAQ: "## Frequently asked questions" followed by "### Question?" + answer paragraph(s)
+function extractFaq(md) {
+  const m = md.match(/^##\s+(?:frequently asked questions|faqs?|common questions)[^\n]*\n([\s\S]*?)(?=^##\s|^:::|^Warmly, Pranita|$(?![\s\S]))/im);
+  if (!m) return [];
+  return m[1].split(/^###\s+/m).slice(1).map((blk) => {
+    const [q, ...rest] = blk.trim().split('\n');
+    const a = rest.join(' ').replace(/\*\*?|\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/\s+/g, ' ').trim();
+    return { q: q.trim(), a };
+  }).filter((x) => x.q && x.a);
+}
+const plain = (s) => s.replace(/\*\*?/g, '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1');
 
 // ---------- shared HTML pieces ----------
 const FOOT = `<footer class="sitefoot">
@@ -109,7 +129,7 @@ const FOOT = `<footer class="sitefoot">
   <p><a href="${SITE}">themoonberryhouse.com</a></p>
 </footer>`;
 
-function head({ title, description, canonical, type, keywords, jsonld, published }) {
+function head({ title, description, canonical, type, keywords, jsonld, published, modified }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,6 +137,8 @@ function head({ title, description, canonical, type, keywords, jsonld, published
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="${AUTHOR}">
 ${keywords ? `<meta name="keywords" content="${esc(keywords)}">\n` : ''}<link rel="canonical" href="${canonical}">
 <meta name="theme-color" content="#3D2E72">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -124,12 +146,12 @@ ${keywords ? `<meta name="keywords" content="${esc(keywords)}">\n` : ''}<link re
 <link rel="alternate" type="application/rss+xml" title="The Moonberry Journal" href="/feed.xml">
 <meta property="og:type" content="${type}">
 <meta property="og:site_name" content="The Moonberry House">
-<meta property="og:title" content="${esc(title.replace(/ — The Moonberry Journal$/, ''))}">
+<meta property="og:title" content="${esc(title.replace(/ \| The Moonberry Journal$/, ''))}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${SITE}/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-${published ? `<meta property="article:published_time" content="${published}">\n<meta property="article:author" content="${AUTHOR}">\n` : ''}<script type="application/ld+json">
+${published ? `<meta property="article:published_time" content="${published}">\n<meta property="article:modified_time" content="${modified || published}">\n<meta property="article:author" content="${AUTHOR}">\n` : ''}<script type="application/ld+json">
 ${JSON.stringify(jsonld, null, 2)}
 </script>
 <link rel="stylesheet" href="/assets/blog.css">
@@ -164,6 +186,9 @@ for (const f of files) {
   if (meta.category && !CATEGORIES[meta.category]) problems.push(`unknown category "${meta.category}"`);
   if (slugs.has(slug)) problems.push('duplicate slug');
   if (meta.description && meta.description.length > 200) problems.push('description > 200 chars');
+  if (!meta.summary) problems.push('missing "summary" (the 30-60 word direct answer)');
+  if (body.includes('—')) problems.push('contains an em dash');
+  if (extractFaq(body).length < 3) problems.push('needs a "## Frequently asked questions" section with at least 3 "### Question?" entries');
   if (problems.length) { fail(`${f}: ${problems.join('; ')}`); continue; }
   slugs.add(slug);
   const words = body.split(/\s+/).length;
@@ -172,9 +197,13 @@ for (const f of files) {
 
 const perDay = {};
 for (const p of all) perDay[p.date] = (perDay[p.date] || 0) + 1;
-for (const [d, n] of Object.entries(perDay)) if (n > MAX_PER_DAY) fail(`${n} posts dated ${d} (max ${MAX_PER_DAY} per day)`);
+const seen = {};
+for (const p of all) {
+  seen[p.date] = (seen[p.date] || 0) + 1;
+  if (seen[p.date] > MAX_PER_DAY) { p.held = true; if (seen[p.date] === MAX_PER_DAY + 1) fail(`${perDay[p.date]} posts dated ${p.date}: only the first ${MAX_PER_DAY} go out (max ${MAX_PER_DAY} per day)`); }
+}
 
-const live = all.filter((p) => p.date <= TODAY && p.draft !== 'true');
+const live = all.filter((p) => p.date <= TODAY && p.draft !== 'true' && !p.held);
 const scheduled = all.filter((p) => p.date > TODAY && p.draft !== 'true');
 const drafts = all.filter((p) => p.draft === 'true');
 
@@ -184,6 +213,17 @@ const timeline = [...live.map((p) => ({ ...p, legacy: false })), ...legacy]
   .sort((a, b) => (a.date === b.date ? (a.slug < b.slug ? 1 : -1) : a.date < b.date ? 1 : -1));
 
 // ---------- post pages ----------
+const ORG = {
+  '@type': 'Organization', '@id': `${SITE}/#org`, name: 'The Moonberry House', url: SITE,
+  logo: { '@type': 'ImageObject', url: `${SITE}/apple-touch-icon.png` },
+  description: 'Colouring books, a painting journal and picture books for every kind of mind, in English and Marathi.',
+  founder: { '@id': `${SITE}/about/#pranita` },
+};
+const PERSON = {
+  '@type': 'Person', '@id': `${SITE}/about/#pranita`, name: AUTHOR, url: `${SITE}/about/`,
+  jobTitle: 'Founder, The Moonberry House', worksFor: { '@id': `${SITE}/#org` },
+};
+
 function postPage(p) {
   const cat = CATEGORIES[p.category];
   const url = `${SITE}/blog/${p.slug}`;
@@ -191,25 +231,48 @@ function postPage(p) {
     .sort((a, b) => (a.date < b.date ? 1 : -1)).slice(0, 3);
   const relatedHtml = related.length
     ? `<div class="related"><h3>Keep reading</h3><ul>${related.map((r) => `<li><a href="/blog/${r.slug}">${esc(r.title)}</a></li>`).join('')}</ul></div>` : '';
-  const jsonld = {
-    '@context': 'https://schema.org', '@type': 'BlogPosting',
-    headline: p.title, description: p.description,
-    datePublished: p.date, dateModified: p.date,
-    author: { '@type': 'Person', name: AUTHOR },
-    publisher: { '@type': 'Organization', name: 'The Moonberry House', logo: { '@type': 'ImageObject', url: `${SITE}/apple-touch-icon.png` } },
-    image: `${SITE}/og-image.png`,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-  };
+  const { html, toc } = renderMarkdown(p.body);
+  const faq = extractFaq(p.body);
+  const modified = p.updated || p.date;
+  const graph = [
+    ORG, PERSON,
+    {
+      '@type': 'BlogPosting', '@id': `${url}#post`, headline: p.title, description: p.description, abstract: p.summary,
+      datePublished: p.date, dateModified: modified, inLanguage: 'en-IN', wordCount: p.words,
+      articleSection: cat.label, keywords: p.keywords,
+      author: { '@id': `${SITE}/about/#pranita` }, publisher: { '@id': `${SITE}/#org` },
+      image: `${SITE}/og-image.png`, mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+      isPartOf: { '@type': 'Blog', '@id': `${SITE}/blog/`, name: 'The Moonberry Journal' },
+      speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.quick'] },
+    },
+    {
+      '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+        { '@type': 'ListItem', position: 2, name: 'The Moonberry Journal', item: SITE + '/blog/' },
+        { '@type': 'ListItem', position: 3, name: cat.label, item: `${SITE}/blog/category/${p.category}/` },
+        { '@type': 'ListItem', position: 4, name: p.title, item: url },
+      ],
+    },
+    faq.length && {
+      '@type': 'FAQPage', '@id': `${url}#faq`,
+      mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    },
+  ].filter(Boolean);
+  const tocHtml = toc.length > 2
+    ? `<nav class="toc" aria-label="In this post"><strong>In this post</strong><ol>${toc.map((t) => `<li><a href="#${t.id}">${inline(t.text)}</a></li>`).join('')}</ol></nav>` : '';
   return head({
-    title: `${p.title} — The Moonberry Journal`, description: p.description, canonical: url, type: 'article',
-    keywords: p.keywords, jsonld, published: p.date,
+    title: `${p.title} | The Moonberry Journal`, description: p.description, canonical: url, type: 'article',
+    keywords: p.keywords, jsonld: { '@context': 'https://schema.org', '@graph': graph }, published: p.date, modified,
   }) + '\n' + masthead(`${tagHtml(cat)}
     <h1 class="posttitle">${esc(p.title)}</h1>
-    <p class="meta"><span>${human(p.date)}</span><span>${p.read} min read</span><span>By ${AUTHOR}</span></p>`) + `
+    <p class="meta"><span>Published <time datetime="${p.date}">${human(p.date)}</time></span>${modified !== p.date ? `<span>Updated <time datetime="${modified}">${human(modified)}</time></span>` : ''}<span>${p.read} min read</span><span>By <a class="byline" href="/about/">${AUTHOR}</a>, founder of The Moonberry House</span></p>`) + `
 
 <main class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Journal</a> › <a href="/blog/category/${p.category}/">${esc(cat.label)}</a></nav>
   <article>
-    ${renderMarkdown(p.body)}
+    <div class="quick"><strong>Quick answer</strong><p>${inline(p.summary)}</p></div>
+    ${tocHtml}
+    ${html}
 ${cat.note ? `\n    <p class="note">${esc(cat.note)}</p>\n` : ''}
     <div class="shelfcta">
       <h3>${esc(cat.cta.title)}</h3>
@@ -251,7 +314,7 @@ function listing({ items, baseUrl, pageNo, pages, title, intro, active, canonica
   const slice = items.slice((pageNo - 1) * PAGE_SIZE, pageNo * PAGE_SIZE);
   const pager = pages > 1 ? `<div class="pager"><span>${pageNo > 1 ? `<a href="${pageNo === 2 ? baseUrl : `${baseUrl}page/${pageNo - 1}/`}">← Newer posts</a>` : ''}</span><span>${pageNo < pages ? `<a href="${baseUrl}page/${pageNo + 1}/">Older posts →</a>` : ''}</span></div>` : '';
   return head({
-    title: `${title} | Kids' Colouring, Calm & Storytelling Blog — The Moonberry House`,
+    title: `${title} | Kids' Colouring, Calm & Storytelling Blog | The Moonberry House`,
     description: canonicalDesc, canonical: url, type: 'website',
     jsonld: { '@context': 'https://schema.org', '@type': 'Blog', name: 'The Moonberry Journal', url: `${SITE}/blog/`, publisher: { '@type': 'Organization', name: 'The Moonberry House', logo: `${SITE}/apple-touch-icon.png` } },
   }) + '\n' + masthead(`<h1 class="blogtitle">${esc(title)}</h1>
@@ -329,6 +392,29 @@ ${timeline.slice(0, 30).map((p) => `  <item>
   </item>`).join('\n')}
 </channel>
 </rss>
+`);
+
+// llms.txt: a plain-text map of the site for AI assistants and answer engines
+const byCat = Object.entries(CATEGORIES).map(([k, c]) => {
+  const items = timeline.filter((p) => p.category === k);
+  return items.length ? `\n### ${c.label}\n${items.map((p) => `- [${p.title}](${SITE}/blog/${p.slug}): ${p.description}`).join('\n')}` : '';
+}).join('\n');
+write('llms.txt', `# The Moonberry House
+
+> The Moonberry House makes colouring books, a painting journal and picture books for every kind of mind, in English and Marathi (मराठी). Founded by Pranita Padwal. The blog, The Moonberry Journal, covers colouring and creativity for children, calm and feelings, activities for autistic, ADHD and sensory-sensitive children, and mindful colouring for adults and teens looking for inner peace. It is a play-and-learning space, not a therapy or medical service.
+
+## Main pages
+- [Home](${SITE}/): what the house is about
+- [Books](${SITE}/books/): five books on Amazon (picture book, colouring books, a painting journal)
+- [Play](${SITE}/play/): a free colour-by-number game with no timers or scores
+- [For every mind](${SITE}/everyone/): gentle, accessible design for different kinds of minds
+- [For grown-ups](${SITE}/grownups/): quiet creative rituals for adults
+- [For parents](${SITE}/parents/): a screen-free week of small activities
+- [About](${SITE}/about/): the founder, Pranita Padwal
+- [Blog](${SITE}/blog/): The Moonberry Journal (RSS: ${SITE}/feed.xml)
+
+## Blog posts
+${byCat}
 `);
 
 console.log(`today ${TODAY}: ${live.length} auto-posts live, ${scheduled.length} scheduled, ${drafts.length} drafts, ${legacy.length} legacy posts`);

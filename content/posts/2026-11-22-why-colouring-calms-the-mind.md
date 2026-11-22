@@ -4,6 +4,7 @@ description: Colouring isn't magic, but it does a few quiet things for a busy mi
 category: mindful-colouring
 date: 2026-11-22
 read: 5
+summary: Colouring can feel calming because it gives a busy mind one small, finished task, uses slow repetitive hand movements, carries no pressure to perform, and lets you make small choices. It's a gentle tool for everyday stress, not a treatment for anxiety or depression.
 keywords: why colouring is calming, mindful colouring, colouring for stress, adult colouring, inner peace, relaxing hobbies
 ---
 If you've ever picked up a pencil "just for a minute" and looked up forty minutes later feeling a little lighter, you already know something that's hard to explain: colouring calms people down. Not dramatically, and not for everyone, but often enough that it's worth understanding why.
@@ -40,4 +41,18 @@ It's worth being honest here. Colouring is a gentle tool for everyday stress, no
 
 Fifteen quiet minutes with a page and a few pencils won't fix everything. But it's one of the kindest small things you can do for a busy head, and it costs almost nothing.
 
-— Pranita
+## Frequently asked questions
+
+### Does colouring really reduce stress?
+Many people find it helps them unwind, because it focuses attention on one simple task and slows breathing. It is a gentle everyday tool rather than a proven treatment, and results vary from person to person.
+
+### How long should I colour to feel calmer?
+Ten to fifteen minutes is plenty for most people. Stopping while you still want more keeps the habit pleasant and easy to repeat.
+
+### What kind of pages are best for relaxing?
+Simple designs such as mandalas, flowers or big open shapes are easiest when you are stressed. Very intricate patterns can feel tiring when your mind is already busy.
+
+### Can colouring replace therapy?
+No. Colouring can sit alongside professional support, but it cannot replace help for anxiety, depression, grief or trauma. If things feel heavy for weeks, please talk to a doctor or qualified counsellor.
+
+Warmly, Pranita

@@ -114,3 +114,12 @@ article li{ margin-bottom:.4rem; }
 .chips a{ font-family:'Mukta'; font-weight:600; font-size:.88rem; text-decoration:none; color:var(--ink); background:#fff; border:1px solid var(--paper-edge); padding:.3rem .8rem; border-radius:999px; }
 .chips a:hover{ border-color:var(--berry); }
 .chips a[aria-current]{ background:var(--night-mid); color:#FFF6E0; border-color:var(--night-mid); }
+.quick{ background:#EAF6F0; border-left:5px solid var(--leaf); border-radius:14px; padding:1rem 1.3rem; margin:0 0 1.8rem; }
+.quick strong{ font-family:'Baloo'; font-size:.8rem; letter-spacing:.07em; text-transform:uppercase; color:#1F6A49; }
+.quick p{ margin:.25rem 0 0; font-size:1.12rem; line-height:1.6; font-weight:600; }
+.toc{ background:#fff; border:1px solid var(--paper-edge); border-radius:16px; padding:1rem 1.3rem; margin:0 0 2rem; font-size:.98rem; }
+.toc ol{ margin:.4rem 0 0; padding-left:1.2rem; } .toc li{ margin-bottom:.2rem; }
+.crumbs{ font-size:.88rem; color:var(--ink-soft); margin:0 0 1.4rem; }
+.crumbs a{ color:var(--ink-soft); }
+.meta a.byline{ color:#FFF6E0; }
+article h2{ scroll-margin-top:1rem; }

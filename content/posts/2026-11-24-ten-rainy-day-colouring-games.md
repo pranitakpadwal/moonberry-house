@@ -4,6 +4,7 @@ description: Ten quick, low-prep games using only paper and crayons, to turn a g
 category: creative-play
 date: 2026-11-24
 read: 4
+summary: Ten paper-and-crayon games for a rainy day need no prep: colour dice doodle, rainbow hunt, mystery mixing, one-colour challenge, pass the page, blind drawing, feelings rainbow, colour by number your way, pattern train and gratitude postcard.
 keywords: rainy day activities for kids, colouring games, screen free activities, indoor games for kids, paper and crayon games
 ---
 Rainy afternoons have a way of stretching. Here are ten colouring games that need nothing but paper and a few crayons, with no prep, no shopping and no mess to speak of.
@@ -27,4 +28,18 @@ Rainy afternoons have a way of stretching. Here are ten colouring games that nee
 
 If you'd like a printable page for any of these, you can print the pictures in our colour game blank and use real crayons.
 
-— Pranita
+## Frequently asked questions
+
+### What can kids do on a rainy day with just paper and crayons?
+Plenty: games like colour dice doodle, rainbow hunt, pass the page and pattern train need nothing more than paper and a few crayons.
+
+### How do I get my child started without a screen?
+Keep the supplies visible and within reach, put one game on a slip of paper in a jar for your child to pick, and join in for the first five minutes.
+
+### Which of these games suit different ages?
+Mystery mixing and rainbow hunt suit younger children, while colour by number your way and pattern train suit older ones. Pass the page works for the whole family.
+
+### Can I print pages for these games?
+Yes. Every picture in the Moonberry House colour game can be printed blank so you can colour it with real crayons.
+
+Warmly, Pranita

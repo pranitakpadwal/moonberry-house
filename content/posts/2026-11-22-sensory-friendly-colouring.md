@@ -4,6 +4,7 @@ description: For children who are sensitive to texture, sound or light, the righ
 category: every-kind-of-mind
 date: 2026-11-22
 read: 5
+summary: To make colouring sensory-friendly, let the child choose their tool, use soft cream or pastel paper taped down, set up a quiet, softly lit space, keep the routine predictable, and drop any pressure to finish. Every child is different, so offer options and follow their lead.
 keywords: sensory friendly colouring, sensory sensitive child, autism colouring, crayons for sensitive kids, calm creative activities, special needs colouring
 ---
 Colouring looks like the simplest activity in the world: paper, crayon, go. But for a child who's sensitive to texture, sound, smell or light, it can be surprisingly hard. The waxy feel of a crayon, the squeak of a marker, the glare of white paper under a bright lamp: small things for some children are genuinely uncomfortable for others.
@@ -48,4 +49,18 @@ There's no right way to colour a page. A page that's half done, scribbled over, 
 
 If you'd like a screen-free option that's built with this thinking in mind, our colour game has no timers, no scores and a Comfort button for calm mode, and every picture can be printed blank for real crayons.
 
-— Pranita
+## Frequently asked questions
+
+### What are the best crayons for a child with sensory sensitivities?
+There is no single best choice. Chunky crayons, colour pencils and washable markers are all worth offering, because some children dislike the feel of wax while others dislike the sound or smell of markers. Let your child pick.
+
+### Why does white paper bother some children?
+Bright white paper can look glaring under strong light. Cream or very light pastel paper is often softer on the eyes, and it costs about the same.
+
+### How can I make colouring less stressful for a child who hates mess?
+Use a tray or mat to mark a clear mess zone, keep wipes within reach, and choose pencils or washable markers. Predictable setup and a clear finish line, such as one page or one song, also help.
+
+### Should I talk to a professional about my child's sensory needs?
+If sensitivities are affecting daily life, an occupational therapist or your child's doctor can offer personalised guidance. These ideas are meant to sit alongside that support, not replace it.
+
+Warmly, Pranita

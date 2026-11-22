@@ -4,6 +4,7 @@ description: A simple, no-skills-needed ten-minute routine to turn colouring int
 category: mindful-colouring
 date: 2026-11-23
 read: 4
+summary: A ten-minute mindful colouring ritual: put your phone away, take three slow breaths, choose one colour, colour a single small area slowly, pause to look, then close with a breath. No skills or special supplies are needed, and wandering thoughts are part of the practice.
 keywords: mindful colouring for beginners, how to start mindful colouring, colouring ritual, relaxation routine, adult colouring tips
 ---
 "Mindful colouring" can sound like one more thing to get right. It isn't. It's just colouring with a little attention, a few minutes of doing one gentle thing and noticing it. Here's a simple ten-minute ritual you can try today, with whatever you already have.
@@ -43,4 +44,18 @@ That's it. No special pens, no perfect lighting, no art skill.
 
 Mindful colouring is a small habit, but small habits are the ones that last. Ten quiet minutes can become a place you return to whenever the day feels too loud.
 
-— Pranita
+## Frequently asked questions
+
+### What do I need to start mindful colouring?
+One simple page, three to five colours you like, ten spare minutes and a quiet spot. No special pens or art skills are required.
+
+### What if my mind keeps wandering while I colour?
+That is normal. Notice it, then gently bring your attention back to the next stroke. Coming back is the practice, so wandering is not failing.
+
+### How often should I do mindful colouring?
+Many people find a short daily session easiest to stick with, ideally at the same time each day, such as after dinner. If you miss a day, simply sit down the next.
+
+### Is mindful colouring the same as art therapy?
+No. Mindful colouring is a self-care habit. Art therapy is delivered by a trained professional. If you are struggling, please talk to a doctor or qualified counsellor.
+
+Warmly, Pranita
