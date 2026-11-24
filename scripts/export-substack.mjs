@@ -45,3 +45,37 @@ ${body.trim()}
 posts.sort((a, b) => a.date.localeCompare(b.date) || a.slug.localeCompare(b.slug));
 fs.writeFileSync(path.join(out, 'posts.json'), JSON.stringify(posts, null, 2));
 console.log(`Exported ${posts.length} posts`);
+
+// RSS feed for Substack's importer (and readers): /feed.xml with full content.
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const items = posts.slice().sort((a, b) => b.date.localeCompare(a.date)).map(p => {
+  const file = fs.readFileSync(path.join(out, `${p.date}-${p.slug}.html`), 'utf8');
+  const content = file.split(/<h1>[\s\S]*?<\/h1>\s*<p><em>[\s\S]*?<\/em><\/p>/)[1]
+    .replace(/<hr>[\s\S]*$/, '').trim();
+  const img = `${SITE}/assets/blog/${p.slug}.jpg`;
+  const url = `${SITE}/blog/${p.slug}`;
+  return `    <item>
+      <title>${esc(p.title)}</title>
+      <link>${url}</link>
+      <guid isPermaLink="true">${url}</guid>
+      <pubDate>${new Date(p.date + 'T06:00:00+05:30').toUTCString()}</pubDate>
+      <dc:creator>The Moonberry Desk</dc:creator>
+      <description>${esc(p.desc)}</description>
+      <enclosure url="${img}" type="image/jpeg" length="0"/>
+      <content:encoded><![CDATA[<img src="${img}" alt="${esc(p.title)}">${content.replace(/]]>/g, ']]&gt;')}<p>Originally published on <a href="${url}">The Moonberry House</a>.</p>]]></content:encoded>
+    </item>`;
+}).join('\n');
+fs.writeFileSync('substack-feed.xml', `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Moonberry Journal</title>
+    <link>${SITE}/blog/</link>
+    <atom:link href="${SITE}/substack-feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Colour-coding play, creative hobbies and screen-free ideas for children, every kind of learner, and grown-ups too.</description>
+    <language>en</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+${items}
+  </channel>
+</rss>
+`);
+console.log('Wrote substack-feed.xml');
