@@ -9,6 +9,9 @@ fs.mkdirSync(out, { recursive: true });
 const dec = s => s.replace(/&amp;/g, '&').replace(/&#39;|&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 const files = fs.readdirSync('blog').filter(f => f.endsWith('.html') && f !== 'index.html');
 const posts = [];
+// Newer auto-drafted posts have no own image; the site falls back to journal.jpg.
+const imageFor = slug => `${SITE}/assets/blog/${fs.existsSync(`assets/blog/${slug}.jpg`) ? slug : 'journal'}.jpg`;
+
 
 for (const f of files) {
   const h = fs.readFileSync(path.join('blog', f), 'utf8');
@@ -26,12 +29,12 @@ for (const f of files) {
     .replace(/ id="[^"]*"/g, '')
     .replace(/href="\/([^"]*)"/g, `href="${SITE}/$1"`)
     .replace(/<blockquote><strong>([^<]*):<\/strong> <p>([\s\S]*?)<\/p>/g, '<blockquote><strong>$1:</strong> $2');
-  const img = `${SITE}/assets/blog/${slug}.jpg`;
+  const img = imageFor(slug);
   const canon = `${SITE}/blog/${slug}`;
   const html = `<!doctype html>
 <meta charset="utf-8">
 <title>${title}</title>
-<!-- SUBSTACK: Title = the H1 below. Subtitle = the italic line. Upload the cover image (assets/blog/${slug}.jpg).
+<!-- SUBSTACK: Title = the H1 below. Subtitle = the italic line. Cover image: ${img}
      In Settings > Search engine, set the canonical/"original URL" to ${canon} if you want SEO credit to the main site. -->
 <h1>${title}</h1>
 <p><em>${desc}</em></p>
@@ -52,7 +55,7 @@ const items = posts.slice().sort((a, b) => b.date.localeCompare(a.date)).map(p =
   const file = fs.readFileSync(path.join(out, `${p.date}-${p.slug}.html`), 'utf8');
   const content = file.split(/<h1>[\s\S]*?<\/h1>\s*<p><em>[\s\S]*?<\/em><\/p>/)[1]
     .replace(/<hr>[\s\S]*$/, '').trim();
-  const img = `${SITE}/assets/blog/${p.slug}.jpg`;
+  const img = imageFor(p.slug);
   const url = `${SITE}/blog/${p.slug}`;
   return `    <item>
       <title>${esc(p.title)}</title>
