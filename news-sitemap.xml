@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://themoonberryhouse.com/blog/ten-rainy-day-colouring-games</loc>
+    <news:news>
+      <news:publication>
+        <news:name>The Moonberry Journal</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-11-24</news:publication_date>
+      <news:title>Ten Rainy-Day Colouring Games That Need Nothing but Paper</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://themoonberryhouse.com/blog/when-kids-colour-outside-the-lines</loc>
+    <news:news>
+      <news:publication>
+        <news:name>The Moonberry Journal</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-11-24</news:publication_date>
+      <news:title>When Your Child Won't Colour Inside the Lines (And Why That's Okay)</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://themoonberryhouse.com/blog/colour-coding-feelings</loc>
     <news:news>
       <news:publication>
