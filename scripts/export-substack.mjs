@@ -76,7 +76,7 @@ fs.writeFileSync('substack-feed.xml', `<?xml version="1.0" encoding="UTF-8"?>
     <atom:link href="${SITE}/substack-feed.xml" rel="self" type="application/rss+xml"/>
     <description>Colour-coding play, creative hobbies and screen-free ideas for children, every kind of learner, and grown-ups too.</description>
     <language>en</language>
-    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <lastBuildDate>${new Date(posts[posts.length - 1].date + 'T06:00:00+05:30').toUTCString()}</lastBuildDate>
 ${items}
   </channel>
 </rss>

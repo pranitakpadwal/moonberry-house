@@ -6,7 +6,7 @@ on:
     - cron: '30 0 * * *'
   push:
     branches: [main]
-    paths: ['content/**', 'scripts/build-blog.mjs']
+    paths: ['content/**', 'scripts/build-blog.mjs', 'scripts/export-substack.mjs', 'scripts/render-covers.mjs']
   workflow_dispatch:
 permissions:
   contents: write
@@ -19,6 +19,14 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: node scripts/build-blog.mjs
+      - name: Make cover images for new posts (optional, never blocks publishing)
+        continue-on-error: true
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+          node scripts/render-covers.mjs
+      - name: Refresh the Substack kit and feed
+        run: node scripts/export-substack.mjs
       - name: Commit and push if anything changed
         run: |
           git config user.name "moonberry-bot"
