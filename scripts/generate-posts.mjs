@@ -31,7 +31,8 @@ for (let d = addDays(today, 1); d <= addDays(today, DAYS_AHEAD); d = addDays(d, 
   for (let n = counts[d] || 0; n < PER_DAY; n++) slots.push(d);
 }
 const topics = JSON.parse(fs.readFileSync(TOPICS_FILE, 'utf8'));
-const pending = topics.filter((t) => t.status === 'pending');
+// highest priority first (priority comes from the Semrush keyword and AI-prompt research), then backlog order
+const pending = topics.filter((t) => t.status === 'pending').sort((x, y) => (y.priority || 0) - (x.priority || 0) || x.id - y.id);
 const plan = slots.slice(0, pending.length).map((date, i) => ({ date, topic: pending[i] }));
 console.log(`${slots.length} open slots in the next ${DAYS_AHEAD} days; ${pending.length} topics pending; writing ${plan.length}`);
 if (!pending.length) console.log('Topic backlog is empty. Add more to content/topics.json');
@@ -104,7 +105,8 @@ function validate(md, topic, date) {
 
 async function write(topic, date, feedback) {
   const cat = CATEGORIES[topic.category];
-  const user = `Write the post.\nTitle idea: ${topic.title}\nAngle: ${topic.angle}\nCategory key: ${topic.category} (${cat.label}: ${cat.intro})\nDate: ${date}${feedback ? `\n\nYour previous attempt was rejected: ${feedback}. Fix that.` : ''}`;
+  const q = (topic.queries || []).length ? `\nReal questions people type into Google and ask AI assistants about this topic (answer them directly; use them, lightly reworded, as the FAQ questions and in subheadings, and work the first one into the title or opening): ${topic.queries.map((x) => `"${x}"`).join('; ')}` : '';
+  const user = `Write the post.\nTitle idea: ${topic.title}\nAngle: ${topic.angle}${q}\nCategory key: ${topic.category} (${cat.label}: ${cat.intro})\nDate: ${date}${feedback ? `\n\nYour previous attempt was rejected: ${feedback}. Fix that.` : ''}`;
   for (let attempt = 1; attempt <= 4; attempt++) {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
