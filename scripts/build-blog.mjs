@@ -167,7 +167,7 @@ ${JSON.stringify(jsonld, null, 2)}
 <script src="/assets/nav.js" defer></script>
 </head>`;
 }
-const NAV_LINKS = [['Play', '/play/'], ['For every mind', '/everyone/'], ['Grown-ups', '/grownups/'], ['Parents', '/parents/'], ['Books', '/books/'], ['Journal', '/blog/']];
+const NAV_LINKS = [['Play', '/play/'], ['Stories', '/stories/'], ['For every mind', '/everyone/'], ['Grown-ups', '/grownups/'], ['Parents', '/parents/'], ['Books', '/books/'], ['Journal', '/blog/']];
 // Site-wide menu (styles: /assets/nav.css, behaviour: /assets/nav.js). Journal is always the current section here.
 const SITE_NAV = `<a class="sn-skip" href="#main" style="position:absolute;left:-9999px">Skip to content</a>
 <header class="sn-header"><div class="sn-bar"><a class="sn-brand" href="/" aria-label="The Moonberry House"><img src="/favicon.svg" alt="" width="36" height="36"><span>The Moonberry House</span></a><nav class="sn-nav" id="snNav" aria-label="Main">${NAV_LINKS.map(([n, u]) => `<a href="${u}"${u === '/blog/' ? ' aria-current="page"' : ''}>${n}</a>`).join('')}</nav><button class="sn-menu" id="snMenu" type="button" aria-expanded="false" aria-controls="snNav" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button></div></header>
@@ -379,7 +379,7 @@ for (const [key, cat] of Object.entries(CATEGORIES)) {
 // sitemap.xml (keeps the lastmod already on file for pages this script doesn't own)
 const existing = {};
 try { for (const m of read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>\s*(?:<lastmod>([^<]+)<\/lastmod>)?/g)) existing[m[1].replace(SITE, '')] = m[2]; } catch {}
-const STATIC = ['/', '/play/', '/everyone/', '/grownups/', '/parents/', '/books/', '/about/', '/authors/', '/privacy/', '/blog/',
+const STATIC = ['/', '/play/', '/stories/', '/stories/', '/everyone/', '/grownups/', '/parents/', '/books/', '/about/', '/authors/', '/privacy/', '/blog/',
   '/books/mama-goose-and-the-missing-little-star/', '/books/halloween-coloring-book/', '/books/my-big-vehicle-coloring-and-activity-book/',
   '/books/safari-snapshots/', '/books/paint-your-peace/'];
 const newest = timeline[0] ? timeline[0].date : TODAY;
