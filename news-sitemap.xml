@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://themoonberryhouse.com/blog/colouring-skills-by-age</loc>
+    <news:news>
+      <news:publication>
+        <news:name>The Moonberry Journal</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-11-26</news:publication_date>
+      <news:title>Colouring Skills by Age: What to Expect From 1 to 8</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://themoonberryhouse.com/blog/what-age-do-kids-learn-colours</loc>
+    <news:news>
+      <news:publication>
+        <news:name>The Moonberry Journal</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-11-26</news:publication_date>
+      <news:title>What Age Do Kids Learn Their Colours? A Realistic Timeline</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://themoonberryhouse.com/blog/ten-rainy-day-colouring-games</loc>
     <news:news>
       <news:publication>
@@ -20,28 +42,6 @@
       </news:publication>
       <news:publication_date>2026-11-24</news:publication_date>
       <news:title>When Your Child Won't Colour Inside the Lines (And Why That's Okay)</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://themoonberryhouse.com/blog/colour-coding-feelings</loc>
-    <news:news>
-      <news:publication>
-        <news:name>The Moonberry Journal</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-11-23</news:publication_date>
-      <news:title>Colour-Coding Feelings: Giving Kids Words for What's Inside</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://themoonberryhouse.com/blog/mindful-colouring-10-minute-ritual</loc>
-    <news:news>
-      <news:publication>
-        <news:name>The Moonberry Journal</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-11-23</news:publication_date>
-      <news:title>Mindful Colouring for Beginners: A 10-Minute Starter Ritual</news:title>
     </news:news>
   </url>
   <url>
