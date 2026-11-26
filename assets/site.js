@@ -254,6 +254,7 @@ if($('notifyForm'))$('notifyForm').addEventListener('submit',function(e){
 if($('yr'))$('yr').textContent=new Date().getFullYear();
 
 /* ---------- init ---------- */
+var MARATHI_ENABLED=false;   // set to true (and delete the .langtoggle rule in site.css) to bring Marathi back
 var saved=store('mb_lang');
-if(saved==='mr')setLang('mr');else runHooks();
+if(MARATHI_ENABLED&&saved==='mr')setLang('mr');else{if(saved==='mr')store('mb_lang','en');runHooks();}
 })();

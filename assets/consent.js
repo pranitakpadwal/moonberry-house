@@ -4,7 +4,8 @@
   var KEY = 'mb_consent', GTM = 'GTM-5N4XFPW4';
   function get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
   function set(v) { try { if (v === null) localStorage.removeItem(KEY); else localStorage.setItem(KEY, v); } catch (e) {} }
-  function lang() { try { return localStorage.getItem('mb_lang') === 'mr' ? 'mr' : 'en'; } catch (e) { return 'en'; } }
+  var MARATHI_ENABLED = false; /* Marathi switched off for now */
+  function lang() { if (!MARATHI_ENABLED) return 'en'; try { return localStorage.getItem('mb_lang') === 'mr' ? 'mr' : 'en'; } catch (e) { return 'en'; } }
 
   function loadGTM() {
     if (window.__mbGtm) return;
