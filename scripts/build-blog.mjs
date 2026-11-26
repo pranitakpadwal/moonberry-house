@@ -376,20 +376,18 @@ for (const [key, cat] of Object.entries(CATEGORIES)) {
   });
 }
 
+// Web Stories: one list (content/web-stories.json) feeds both sitemaps. Add a story there and it appears in both.
+const WEBSTORIES = JSON.parse(read('content/web-stories.json'));
 // sitemap.xml (keeps the lastmod already on file for pages this script doesn't own)
 const existing = {};
 try { for (const m of read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>\s*(?:<lastmod>([^<]+)<\/lastmod>)?/g)) existing[m[1].replace(SITE, '')] = m[2]; } catch {}
 const STATIC = ['/', '/play/', '/stories/', '/web-stories/', '/everyone/', '/grownups/', '/parents/', '/books/', '/about/', '/authors/', '/privacy/', '/blog/',
   '/books/mama-goose-and-the-missing-little-star/', '/books/halloween-coloring-book/', '/books/my-big-vehicle-coloring-and-activity-book/',
-  '/books/safari-snapshots/', '/books/paint-your-peace/',
-  '/web-stories/mama-goose-and-the-missing-little-star/',
-  '/web-stories/a-friendly-halloween/',
-  '/web-stories/paint-your-peace-a-gentle-pause/',
-  '/web-stories/my-big-vehicle-adventure/',
-  '/web-stories/safari-snapshots-animal-adventure/'];
+  '/books/safari-snapshots/', '/books/paint-your-peace/'];
 const newest = timeline[0] ? timeline[0].date : TODAY;
 const urls = [
   ...STATIC.map((u) => ({ loc: u, lastmod: u === '/blog/' ? newest : existing[u] || TODAY })),
+  ...WEBSTORIES.map((w) => ({ loc: `/web-stories/${w.slug}/`, lastmod: w.date })),
   ...Object.keys(CATEGORIES).filter((k) => timeline.some((p) => p.category === k)).map((k) => ({ loc: `/blog/category/${k}/`, lastmod: timeline.find((p) => p.category === k).date })),
   ...timeline.map((p) => ({ loc: `/blog/${p.slug}`, lastmod: p.updated || p.date })),
 ];
@@ -402,17 +400,21 @@ ${urls.map((u) => `  <url>\n    <loc>${SITE}${u.loc}</loc>\n    <lastmod>${u.las
 // news-sitemap.xml: the existing posts plus anything published in the last 2 days (Google News's window)
 const cutoff = addDays(TODAY, -2);
 const newsItems = timeline.filter((p) => p.legacy || p.date >= cutoff).sort((a, b) => (a.date < b.date ? 1 : -1));
+const newsAll = [
+  ...newsItems.map((p) => ({ loc: `/blog/${p.slug}`, date: p.date, title: p.title })),
+  ...WEBSTORIES.map((w) => ({ loc: `/web-stories/${w.slug}/`, date: w.date, title: w.title })),
+].sort((x, y) => (x.date < y.date ? 1 : x.date > y.date ? -1 : 0));
 write('news-sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-${newsItems.map((p) => `  <url>
-    <loc>${SITE}/blog/${p.slug}</loc>
+${newsAll.map((n) => `  <url>
+    <loc>${SITE}${n.loc}</loc>
     <news:news>
       <news:publication>
         <news:name>The Moonberry Journal</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>${p.date}</news:publication_date>
-      <news:title>${esc(p.title)}</news:title>
+      <news:publication_date>${n.date}</news:publication_date>
+      <news:title>${esc(n.title)}</news:title>
     </news:news>
   </url>`).join('\n')}
 </urlset>
