@@ -312,3 +312,7 @@ a.cover{text-decoration:none;}
 .bk1 .cover{background:#FFE0E8;}.bk2 .cover{background:#FFF0C7;}.bk3 .cover{background:#D9F0FA;}.bk4 .cover{background:#D8F1E5;}.bk5 .cover{background:#E8DDF7;}
 @media (max-width:900px){.book{grid-column:span 3;}.book.wide{grid-column:span 6;}}
 @media (max-width:600px){.book,.book.wide{grid-column:span 6;}.book.wide{flex-direction:column;}.book.wide .cover{aspect-ratio:4/5;flex:none;}}
+
+/* Marathi is switched off for now. To bring the language buttons back, delete this rule
+   and set MARATHI_ENABLED = true in assets/site.js and assets/consent.js. */
+.langtoggle{display:none !important;}
