@@ -383,7 +383,10 @@ const STATIC = ['/', '/play/', '/stories/', '/web-stories/', '/everyone/', '/gro
   '/books/mama-goose-and-the-missing-little-star/', '/books/halloween-coloring-book/', '/books/my-big-vehicle-coloring-and-activity-book/',
   '/books/safari-snapshots/', '/books/paint-your-peace/',
   '/web-stories/mama-goose-and-the-missing-little-star/',
-  '/web-stories/a-friendly-halloween/'];
+  '/web-stories/a-friendly-halloween/',
+  '/web-stories/paint-your-peace-a-gentle-pause/',
+  '/web-stories/my-big-vehicle-adventure/',
+  '/web-stories/safari-snapshots-animal-adventure/'];
 const newest = timeline[0] ? timeline[0].date : TODAY;
 const urls = [
   ...STATIC.map((u) => ({ loc: u, lastmod: u === '/blog/' ? newest : existing[u] || TODAY })),
