@@ -64,8 +64,8 @@
     "@type": "SiteNavigationElement",
     "@id": "https://themoonberryhouse.com/#nav-3",
     "position": 3,
-    "name": "For every mind",
-    "url": "https://themoonberryhouse.com/everyone/",
+    "name": "Web Stories",
+    "url": "https://themoonberryhouse.com/web-stories/",
     "isPartOf": {
       "@id": "https://themoonberryhouse.com/#website"
     }
@@ -74,8 +74,8 @@
     "@type": "SiteNavigationElement",
     "@id": "https://themoonberryhouse.com/#nav-4",
     "position": 4,
-    "name": "Grown-ups",
-    "url": "https://themoonberryhouse.com/grownups/",
+    "name": "For every mind",
+    "url": "https://themoonberryhouse.com/everyone/",
     "isPartOf": {
       "@id": "https://themoonberryhouse.com/#website"
     }
@@ -84,8 +84,8 @@
     "@type": "SiteNavigationElement",
     "@id": "https://themoonberryhouse.com/#nav-5",
     "position": 5,
-    "name": "Parents",
-    "url": "https://themoonberryhouse.com/parents/",
+    "name": "Grown-ups",
+    "url": "https://themoonberryhouse.com/grownups/",
     "isPartOf": {
       "@id": "https://themoonberryhouse.com/#website"
     }
@@ -94,8 +94,8 @@
     "@type": "SiteNavigationElement",
     "@id": "https://themoonberryhouse.com/#nav-6",
     "position": 6,
-    "name": "Books",
-    "url": "https://themoonberryhouse.com/books/",
+    "name": "Parents",
+    "url": "https://themoonberryhouse.com/parents/",
     "isPartOf": {
       "@id": "https://themoonberryhouse.com/#website"
     }
@@ -104,8 +104,8 @@
     "@type": "SiteNavigationElement",
     "@id": "https://themoonberryhouse.com/#nav-7",
     "position": 7,
-    "name": "Journal",
-    "url": "https://themoonberryhouse.com/blog/",
+    "name": "Books",
+    "url": "https://themoonberryhouse.com/books/",
     "isPartOf": {
       "@id": "https://themoonberryhouse.com/#website"
     }
@@ -114,6 +114,16 @@
     "@type": "SiteNavigationElement",
     "@id": "https://themoonberryhouse.com/#nav-8",
     "position": 8,
+    "name": "Journal",
+    "url": "https://themoonberryhouse.com/blog/",
+    "isPartOf": {
+      "@id": "https://themoonberryhouse.com/#website"
+    }
+  },
+  {
+    "@type": "SiteNavigationElement",
+    "@id": "https://themoonberryhouse.com/#nav-9",
+    "position": 9,
     "name": "About",
     "url": "https://themoonberryhouse.com/about/",
     "isPartOf": {

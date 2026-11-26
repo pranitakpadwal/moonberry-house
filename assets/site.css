@@ -70,14 +70,14 @@ section{padding:4.5rem 0;scroll-margin-top:70px;}
 .brand img{width:36px;height:36px;display:block;}
 @media (max-width:480px){.brand{font-size:1rem;gap:.4rem;}.brand img{width:30px;height:30px;}.bar{gap:.5rem;}.langtoggle button{min-width:40px;padding:0 .5rem;}}
 .nav{display:flex;align-items:center;gap:.3rem;}
-.nav a{color:#EDE6FA;text-decoration:none;font-weight:600;padding:.5rem .8rem;border-radius:999px;}
+.nav a{white-space:nowrap;color:#EDE6FA;text-decoration:none;font-weight:600;padding:.5rem .8rem;border-radius:999px;}
 .nav a:hover{background:rgba(255,255,255,.12);color:#fff;}
 .tools{display:flex;align-items:center;gap:.5rem;}
 .langtoggle{display:inline-flex;background:rgba(255,255,255,.12);border-radius:999px;padding:3px;}
 .langtoggle button{border:0;background:transparent;color:#EDE6FA;font:700 .92rem 'Mukta',sans-serif;min-width:44px;min-height:38px;padding:0 .7rem;border-radius:999px;cursor:pointer;}
 .langtoggle button.active{background:var(--sun);color:#2E2440;}
 .menu-btn{display:none;min-width:44px;min-height:44px;border:0;border-radius:12px;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;}
-@media (max-width:900px){
+@media (max-width:1120px){
   .menu-btn{display:inline-flex;align-items:center;justify-content:center;}
   .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:#241B4E;padding:.6rem 1.4rem 1rem;}
   .nav.open{display:flex;}
@@ -316,3 +316,16 @@ a.cover{text-decoration:none;}
 /* Marathi is switched off for now. To bring the language buttons back, delete this rule
    and set MARATHI_ENABLED = true in assets/site.js and assets/consent.js. */
 .langtoggle{display:none !important;}
+
+/* Web Stories cards */
+.ws-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,320px));gap:1.6rem;justify-content:center;margin-top:2rem;text-align:left;}
+.ws-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--paper-edge);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;text-decoration:none;color:var(--ink);transition:transform .15s;}
+.ws-card:hover{transform:translateY(-4px);}
+.ws-img{display:block;aspect-ratio:3/4;background:var(--night-mid);}
+.ws-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.ws-body{display:flex;flex-direction:column;gap:.35rem;padding:1.1rem 1.3rem 1.4rem;}
+.ws-tag{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--berry-deep);}
+.ws-title{font:800 1.3rem/1.2 'Baloo',sans-serif;}
+.ws-text{font-size:1rem;color:var(--ink-soft);}
+.ws-go{margin-top:.5rem;font-weight:700;color:var(--berry-deep);}
+.ws-go::after{content:" \2192";}
