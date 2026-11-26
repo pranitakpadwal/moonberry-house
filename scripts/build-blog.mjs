@@ -381,7 +381,8 @@ const existing = {};
 try { for (const m of read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>\s*(?:<lastmod>([^<]+)<\/lastmod>)?/g)) existing[m[1].replace(SITE, '')] = m[2]; } catch {}
 const STATIC = ['/', '/play/', '/stories/', '/stories/', '/everyone/', '/grownups/', '/parents/', '/books/', '/about/', '/authors/', '/privacy/', '/blog/',
   '/books/mama-goose-and-the-missing-little-star/', '/books/halloween-coloring-book/', '/books/my-big-vehicle-coloring-and-activity-book/',
-  '/books/safari-snapshots/', '/books/paint-your-peace/'];
+  '/books/safari-snapshots/', '/books/paint-your-peace/',
+  '/web-stories/mama-goose-and-the-missing-little-star/'];
 const newest = timeline[0] ? timeline[0].date : TODAY;
 const urls = [
   ...STATIC.map((u) => ({ loc: u, lastmod: u === '/blog/' ? newest : existing[u] || TODAY })),
