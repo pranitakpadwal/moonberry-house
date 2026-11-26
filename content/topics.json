@@ -5,7 +5,8 @@
   "angle": "Repetitive, low-stakes focus, a small bounded task, no performance pressure. Explain gently without overclaiming science.",
   "id": 1,
   "status": "done",
-  "date": "2026-11-22"
+  "date": "2026-11-22",
+  "priority": 0
  },
  {
   "category": "mindful-colouring",
@@ -13,105 +14,120 @@
   "angle": "Step-by-step: set up, pick 3 colours, breathe, colour one small area, finish. Practical.",
   "id": 2,
   "status": "done",
-  "date": "2026-11-23"
+  "date": "2026-11-23",
+  "priority": 0
  },
  {
   "category": "mindful-colouring",
   "title": "How to Colour When Your Mind Won't Stop Racing",
   "angle": "Anchor techniques: slow strokes, counting breaths, one-colour pages, permission to stop.",
   "id": 3,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "mindful-colouring",
   "title": "Colouring for Letting Go: A Gentle Exercise for Hard Seasons",
   "angle": "Colour a shape for something you're releasing; not therapy, a quiet ritual.",
   "id": 4,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "mindful-colouring",
   "title": "Mandalas Explained: Why Circles Feel Calming",
   "angle": "Plain-language history across cultures, why symmetrical patterns feel settling, how to start.",
   "id": 5,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "mindful-colouring",
   "title": "Inner Peace Isn't a Destination: Small Daily Practices That Help",
   "angle": "Short, kind, practical; includes colouring as one practice among others.",
   "id": 6,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "mindful-colouring",
   "title": "Self-Love Pages: Colouring and Painting Prompts for Rough Days",
   "angle": "Five gentle prompts for adults and teens, no art skill needed.",
   "id": 7,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "mindful-colouring",
   "title": "Healing Takes Time: Making a Slow Creative Hobby Part of Recovery Seasons",
   "angle": "Gentle encouragement; stress that creative time complements, not replaces, professional help.",
   "id": 8,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "mindful-colouring",
   "title": "A Calm 15 Minutes Before Bed: Colouring as a Wind-Down for Adults",
   "angle": "Screen-free evening ritual and what to avoid (detailed pages when tired, etc.).",
   "id": 9,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "mindful-colouring",
   "title": "Colouring Without Judgement: Letting Go of Staying Inside the Lines",
   "angle": "Perfectionism and play; give yourself permission.",
   "id": 10,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "mindful-colouring",
   "title": "Creative Hobbies That Fit a Busy Life (When You Think You Have No Time)",
   "angle": "Micro-hobbies: five-minute sketch, one-page colouring, postcard painting.",
   "id": 11,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "mindful-colouring",
   "title": "Teen Stress and Creative Outlets: What Helps When Everything Feels Like Too Much",
   "angle": "Tone: for teens and parents of teens; stress that serious distress needs real support.",
   "id": 12,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "mindful-colouring",
   "title": "Colour Your Mood: A Simple Daily Check-In With Crayons",
   "angle": "A colour-per-feeling chart; track a week; no interpretation, just noticing.",
   "id": 13,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "mindful-colouring",
   "title": "Slow Art: Why Doing One Thing at a Time Feels So Good Now",
   "angle": "Single-tasking, hobbies as relief from constant notifications.",
   "id": 14,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "mindful-colouring",
   "title": "Painting Your Peace: How to Start When You Think You Can't Paint",
   "angle": "Permission to be a beginner; materials, first marks, watercolour basics.",
   "id": 15,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "every-kind-of-mind",
   "title": "Colouring for Autistic Children: Making It Calm, Predictable and Fun",
   "angle": "Predictable routines, choice of tools, no pressure to finish, sensory comfort; avoid generalising.",
   "id": 16,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "every-kind-of-mind",
@@ -119,28 +135,32 @@
   "angle": "Textures, smells, noise, lighting; offer options; every child differs.",
   "id": 17,
   "status": "done",
-  "date": "2026-11-22"
+  "date": "2026-11-22",
+  "priority": 0
  },
  {
   "category": "every-kind-of-mind",
   "title": "Colouring and ADHD: Short Bursts, Big Wins",
   "angle": "Movement breaks, timers they control, interest-led pages; avoid claims about treatment.",
   "id": 18,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "every-kind-of-mind",
   "title": "How to Make Creative Time Feel Safe for a Child Who Hates Mess",
   "angle": "Tactile sensitivity, tools like thick crayons, markers, gloves, wipe-clean mats.",
   "id": 19,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "every-kind-of-mind",
   "title": "Colour-Blind Kids and Colouring: How to Make Pages Work for Everyone",
   "angle": "Numbers on colours, labelled crayons, contrast, patterns; ties to the site's numbered colour approach.",
   "id": 20,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "every-kind-of-mind",
@@ -148,63 +168,72 @@
   "angle": "Fine-motor development, expression; include when to ask an OT, gently.",
   "id": 21,
   "status": "done",
-  "date": "2026-11-24"
+  "date": "2026-11-24",
+  "priority": 0
  },
  {
   "category": "every-kind-of-mind",
   "title": "Fine-Motor Skills Through Colouring: Gentle Ways to Build Grip and Control",
   "angle": "Chunky crayons, vertical surfaces, playdough warm-up; developmental ranges are broad.",
   "id": 22,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "every-kind-of-mind",
   "title": "Non-Speaking and Late-Speaking Children: Ways Colour Can Help Them Tell You Things",
   "angle": "Choice boards, colour cards for feelings; ideas to explore with their speech therapist.",
   "id": 23,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "every-kind-of-mind",
   "title": "Visual Schedules for Kids: Using Colour to Make the Day Predictable",
   "angle": "Colour-coded routine strips; practical build guide.",
   "id": 24,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "every-kind-of-mind",
   "title": "Meltdown vs. Tantrum: A Parent's Quiet-Space Toolkit",
   "angle": "Calm corner with colouring and sensory items; careful, not diagnostic, defer to professionals.",
   "id": 25,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "every-kind-of-mind",
   "title": "Dyslexia-Friendly Reading and Colour: What Parents Can Try at Home",
   "angle": "Coloured overlays evidence is mixed; honest about it; focus on spacing, fonts, multisensory approaches.",
   "id": 26,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "every-kind-of-mind",
   "title": "Celebrating Every Kind of Mind: Talking to Siblings and Classmates About Differences",
   "angle": "Kind language for explaining neurodiversity to other children.",
   "id": 27,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "every-kind-of-mind",
   "title": "Building a Calm-Down Corner That a Child Will Actually Use",
   "angle": "Co-design with the child, keep it inviting, not a punishment.",
   "id": 28,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "every-kind-of-mind",
   "title": "Bilingual and Neurodivergent: Can a Child With Speech Delay Grow Up With Two Languages?",
   "angle": "Honest summary: research suggests bilingualism does not cause delay; talk to SLP.",
   "id": 29,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "calm-feelings",
@@ -212,140 +241,160 @@
   "angle": "Feelings-colour chart, co-created; no right answers.",
   "id": 30,
   "status": "done",
-  "date": "2026-11-23"
+  "date": "2026-11-23",
+  "priority": 0
  },
  {
   "category": "calm-feelings",
   "title": "The Colour Monster Game: Teaching Emotions With Crayons",
   "angle": "Original activity: draw a monster for each feeling; discuss. Don't reuse trademarked book content.",
   "id": 31,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "calm-feelings",
   "title": "Five Calm-Down Colouring Activities for Big Feelings",
   "angle": "Five concrete activities with time and materials.",
   "id": 32,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "calm-feelings",
   "title": "Why Kids Get Angry After School (and a Colouring Reset That Helps)",
   "angle": "Restraint collapse, decompression time; colouring as a re-entry ritual.",
   "id": 33,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "calm-feelings",
   "title": "Helping an Anxious Child Draw Their Worry",
   "angle": "Worry monsters, shrinking worries, size/colour choices; when to seek help.",
   "id": 34,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "calm-feelings",
   "title": "Breathing Exercises Kids Actually Like (Hint: Use a Crayon)",
   "angle": "Trace a shape while breathing in and out; balloon, flower breaths.",
   "id": 35,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "calm-feelings",
   "title": "Drawing Through Grief: Gentle Ways to Help a Child Who's Lost Someone",
   "angle": "Memory drawings, colours of a person; careful, defers to professionals for prolonged distress.",
   "id": 36,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "calm-feelings",
   "title": "First-Day Nerves: Drawing Your Way Into a New School",
   "angle": "Draw the school, draw the friend you'd like, countdown pages.",
   "id": 37,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "calm-feelings",
   "title": "Sibling Fights and Quiet Colouring: A Truce Strategy",
   "angle": "Shared page, divided page, collaborative mural.",
   "id": 38,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "calm-feelings",
   "title": "Teaching Kids to Name Big Feelings Before They Explode",
   "angle": "Emotional vocabulary; modelling by the adult; simple scripts.",
   "id": 39,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "colour-creativity",
   "title": "Why Do Kids Colour Outside the Lines? A Gentle Guide for Parents",
   "angle": "Development of control and exploration.",
   "id": 40,
-  "status": "pending"
+  "status": "skip",
+  "priority": 0
  },
  {
   "category": "colour-creativity",
   "title": "A Beginner's Guide to Colour Mixing With Kids",
   "angle": "Primary and secondary mixing activity with paper plates.",
   "id": 41,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "colour-creativity",
   "title": "Warm vs. Cool Colours: A Simple Lesson for Young Artists",
   "angle": "Hands-on sort game.",
   "id": 42,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "colour-creativity",
   "title": "Crayons, Colour Pencils or Markers? What's Best at Each Age",
   "angle": "Practical age-by-age.",
   "id": 43,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "colour-creativity",
   "title": "Why Toddlers Scribble (and When Scribbles Turn Into Drawings)",
   "angle": "Stages of scribbling.",
   "id": 44,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "colour-creativity",
   "title": "Nature Colour Hunt: A Walk That Turns Into an Art Lesson",
   "angle": "Collect colour swatches outdoors.",
   "id": 45,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "colour-creativity",
   "title": "Festival Colours: What Holi, Diwali and Eid Teach Kids About Colour",
   "angle": "Respectful, culture-aware; Indian festivals.",
   "id": 46,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "colour-creativity",
   "title": "Rainbow Order: Fun Ways to Teach the Colours of the Rainbow",
   "angle": "Mnemonics, craft.",
   "id": 47,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "colour-creativity",
   "title": "How to Talk About a Child's Drawing (Without Saying 'It's Beautiful')",
   "angle": "Process praise, curious questions.",
   "id": 48,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "colour-creativity",
   "title": "Colour by Number Is Secretly a Maths Lesson",
   "angle": "Ties to colour-coding play page.",
   "id": 49,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "creative-play",
@@ -353,160 +402,776 @@
   "angle": "Quick list of ten games.",
   "id": 50,
   "status": "done",
-  "date": "2026-11-24"
+  "date": "2026-11-24",
+  "priority": 0
  },
  {
   "category": "creative-play",
   "title": "A Road Trip Colouring Kit: What to Pack for Quiet Back Seats",
   "angle": "Kit and tips for travel.",
   "id": 51,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "creative-play",
   "title": "Homemade Playdough and Why Small Hands Need It",
   "angle": "Recipe, benefits, safety.",
   "id": 52,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "creative-play",
   "title": "Make Your Own Postcards at Home: A Colouring and Mailing Project",
   "angle": "Ties to postcards post.",
   "id": 53,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "creative-play",
   "title": "Family Colouring Night: How to Make It Happen (and Make It Last)",
   "angle": "Rituals, snacks, music.",
   "id": 54,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "creative-play",
   "title": "Halloween Colouring Without the Scary: Friendly Ways to Enjoy the Season",
   "angle": "Ties to the Halloween book.",
   "id": 55,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "creative-play",
   "title": "Kitchen-Table Art: Setting Up a Tiny Creative Corner in a Small Home",
   "angle": "Space-saving ideas.",
   "id": 56,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "creative-play",
   "title": "The Ten-Minute Art Habit: How Short Daily Creativity Adds Up",
   "angle": "Habit design for children.",
   "id": 57,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "creative-play",
   "title": "Colouring With Grandparents: A Cross-Generation Activity Everyone Enjoys",
   "angle": "Intergenerational.",
   "id": 58,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "creative-play",
   "title": "Birthday Party Colouring Table: A Calm Corner at a Loud Party",
   "angle": "Setup ideas, a quiet space.",
   "id": 59,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "journals-writing",
   "title": "How to Start a Kids' Journal (Without the Pressure of Writing)",
   "angle": "Draw-first journals, prompts.",
   "id": 60,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "journals-writing",
   "title": "Gratitude Drawings: A Two-Minute Evening Habit for Kids",
   "angle": "Draw one good thing.",
   "id": 61,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "journals-writing",
   "title": "Teen Journaling Prompts That Aren't Cringe",
   "angle": "Prompts.",
   "id": 62,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "journals-writing",
   "title": "A Journal for Grown-Ups Who Say They Can't Journal",
   "angle": "Art-journal approach.",
   "id": 63,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "bedtime-reading",
   "title": "A Calm Bedtime Routine in Five Steps (With a Colouring Wind-Down)",
   "angle": "Routine template.",
   "id": 64,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "bedtime-reading",
   "title": "Why Kids Ask for the Same Story Every Night",
   "angle": "Repetition and mastery.",
   "id": 65,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "bedtime-reading",
   "title": "Reading to a Child Who Won't Sit Still",
   "angle": "Strategies.",
   "id": 66,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "bilingual-parenting",
   "title": "Teaching the Marathi Alphabet With Colour: Ideas for Little Learners",
   "angle": "Colour-coded letters.",
   "id": 67,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "bilingual-parenting",
   "title": "One Parent, One Language: Does It Work for Marathi at Home?",
   "angle": "Honest summary.",
   "id": 68,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "bilingual-parenting",
   "title": "Diaspora Kids and Heritage Language: Keeping Marathi Alive Abroad",
   "angle": "Practical approaches.",
   "id": 69,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "screens-focus",
   "title": "How to Do a Screen-Free Hour Without a Fight",
   "angle": "Transition strategies.",
   "id": 70,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "screens-focus",
   "title": "Boredom Is Good for Kids: What to Say After 'I'm Bored'",
   "angle": "Reframing boredom.",
   "id": 71,
-  "status": "pending"
+  "status": "pending",
+  "priority": 0
  },
  {
   "category": "screens-focus",
   "title": "A Gentle Screen-Free Evening: Ideas for Tired Parents",
   "angle": "Low-effort ideas.",
   "id": 72,
+  "status": "pending",
+  "priority": 0
+ },
+ {
+  "category": "colour-creativity",
+  "priority": 3,
+  "title": "What Age Do Kids Learn Their Colours? A Realistic Timeline",
+  "angle": "Seeing vs matching vs naming; typical ranges, wide variation; when to check vision; no drilling.",
+  "queries": [
+   "at what age do children typically learn their colors",
+   "when do kids learn colors",
+   "what age do kids know colors"
+  ],
+  "id": 73,
+  "status": "done",
+  "date": "2026-11-26"
+ },
+ {
+  "category": "colour-creativity",
+  "priority": 3,
+  "title": "Colouring Skills by Age: What to Expect From 1 to 8",
+  "angle": "Scribbling to staying inside lines to shading; wide normal range; links to the lines post.",
+  "queries": [
+   "when do kids color in the lines",
+   "3 year old coloring skills",
+   "how can i encourage neat coloring in young children"
+  ],
+  "id": 74,
+  "status": "done",
+  "date": "2026-11-26"
+ },
+ {
+  "category": "colour-creativity",
+  "priority": 3,
+  "title": "How to Teach Kids Colours: Play-Based Activities That Work",
+  "angle": "Few colours at a time, matching, sorting, colour hunts, daily-life talk; no flashcard drilling.",
+  "queries": [
+   "how to teach kids colors",
+   "how can parents help children learn colors effectively",
+   "what are the best activities to teach colors to preschoolers"
+  ],
+  "id": 75,
+  "status": "done",
+  "date": "2026-11-27"
+ },
+ {
+  "category": "creative-play",
+  "priority": 3,
+  "title": "Colouring for 1 and 2 Year Olds: Safe, Simple and Actually Fun",
+  "angle": "Sensory exploration, chunky tools, supervision, non-toxic labels, 5-minute sessions.",
+  "queries": [
+   "coloring for 18 month old",
+   "are there specific coloring activities suitable for 1-year-olds",
+   "are there safe and non-toxic coloring supplies for toddlers"
+  ],
+  "id": 76,
+  "status": "done",
+  "date": "2026-11-27"
+ },
+ {
+  "category": "colour-creativity",
+  "priority": 3,
+  "title": "How Colouring Helps Kids Develop: Fine Motor, Focus and Pre-Writing",
+  "angle": "Honest benefits and limits; free drawing matters too.",
+  "queries": [
+   "how coloring helps kids",
+   "how do coloring books help in the development of preschoolers",
+   "how can coloring activities help my 2-year-old's development"
+  ],
+  "id": 77,
+  "status": "done",
+  "date": "2026-11-28"
+ },
+ {
+  "category": "mindful-colouring",
+  "priority": 3,
+  "title": "Can Colouring Help With Anxiety? What It Can and Can't Do",
+  "angle": "Self-care vs therapy; honest; when to seek help.",
+  "queries": [
+   "can coloring be used as a therapy for anxiety",
+   "how does coloring help reduce stress and anxiety",
+   "what are some calming coloring pages i can try at home"
+  ],
+  "id": 78,
+  "status": "done",
+  "date": "2026-11-28"
+ },
+ {
+  "category": "colour-creativity",
+  "priority": 3,
+  "title": "Colour Mixing Activities for Preschoolers (With Almost No Mess)",
+  "angle": "Primary and secondary mixing, simple set-ups, age steps.",
+  "queries": [
+   "what are some fun color mixing activities i can do with preschoolers",
+   "how to teach kids to mix colors",
+   "how to use color wheel for kids"
+  ],
+  "id": 79,
+  "status": "done",
+  "date": "2026-11-29"
+ },
+ {
+  "category": "colour-creativity",
+  "priority": 3,
+  "title": "The Best Colours for a Child's Room: Calm, Play and Sleep",
+  "angle": "Honest: limited research; practical zoning, light, washable finish; Vastu mentioned neutrally as a cultural tradition.",
+  "queries": [
+   "which color is best for kids room",
+   "how to choose color of wall for kids",
+   "why kids room should be colorful"
+  ],
+  "id": 80,
+  "status": "done",
+  "date": "2026-11-29"
+ },
+ {
+  "category": "creative-play",
+  "priority": 3,
+  "title": "How to Find and Print Free Colouring Pages (Safely and Well)",
+  "angle": "Good sources, licences, character-page copyright caution, paper and print settings; blank printables in the colour game.",
+  "queries": [
+   "how do you print coloring pages",
+   "how to find free printable coloring pages for kids",
+   "where can i find printable coloring sheets"
+  ],
+  "id": 81,
+  "status": "done",
+  "date": "2026-11-30"
+ },
+ {
+  "category": "creative-play",
+  "priority": 3,
+  "title": "How to Get a Reluctant Child to Enjoy Colouring",
+  "angle": "Low pressure, follow interests, sit alongside, vary tools, never correct.",
+  "queries": [
+   "what are some tips for encouraging a child to enjoy coloring",
+   "how to reach kids to color",
+   "how to improve kids coloring"
+  ],
+  "id": 82,
+  "status": "done",
+  "date": "2026-11-30"
+ },
+ {
+  "category": "every-kind-of-mind",
+  "priority": 3,
+  "title": "Colouring Books for Kids Who Struggle to Focus: What to Look For",
+  "angle": "Short sessions, big shapes, interest-led themes, movement breaks; no treatment claims; professionals for concerns.",
+  "queries": [
+   "coloring books for attention deficit kids",
+   "coloring and adhd",
+   "how to improve kids coloring"
+  ],
+  "id": 83,
+  "status": "pending"
+ },
+ {
+  "category": "every-kind-of-mind",
+  "priority": 3,
+  "title": "Do Autistic Children See and Tell Colours Apart? What Parents Ask",
+  "angle": "Evidence-light honesty; strengths-based; colour as a communication and interest tool; ask professionals.",
+  "queries": [
+   "can kids affected with autism recognize and differentiate colors"
+  ],
+  "id": 84,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 2,
+  "title": "Paint by Numbers for Kids: Benefits and How to Start",
+  "angle": "Colour-coding, counting, patience; start simple; tie to the colour game.",
+  "queries": [
+   "are there any educational benefits of children doing paint by numbers",
+   "what are the best paint by number kits for kids",
+   "how can i help my child improve their painting skills with paint by numbers"
+  ],
+  "id": 85,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 2,
+  "title": "Storytelling Colouring Pages: When Stories and Colour Meet",
+  "angle": "Story-led colouring, retelling, sequencing; sits with picture books.",
+  "queries": [
+   "storytelling coloring pages",
+   "how can storytelling coloring pages help improve kids' creativity",
+   "where can i find high-quality coloring books that tell a story"
+  ],
+  "id": 86,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 2,
+  "title": "Mess-Free Colouring: How It Works and Is It Safe for Toddlers",
+  "angle": "How the mess-free products generally work; supervision; labels; alternatives.",
+  "queries": [
+   "how does mess-free coloring work and is it safe for young children",
+   "what are some tips for keeping kids entertained with mess-free coloring"
+  ],
+  "id": 87,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 2,
+  "title": "How to Choose a First Colouring Book for a Toddler",
+  "angle": "Big simple shapes, paper weight, non-toxic, themes; criteria not brand rankings.",
+  "queries": [
+   "what are the best first coloring books for young children",
+   "how can i choose a safe and educational coloring book for a toddler",
+   "coloring book for 1-2 years kid"
+  ],
+  "id": 88,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 2,
+  "title": "Colouring Books for Return Gifts, Classrooms and Parties: What to Look For",
+  "angle": "Bulk buying criteria; age ranges; themes; India-friendly; no invented product claims.",
+  "queries": [
+   "color book for kids for bulk purchase in india",
+   "how can i find affordable bulk coloring books for a classroom",
+   "what are the best mini coloring books for kids"
+  ],
+  "id": 89,
+  "status": "pending"
+ },
+ {
+  "category": "bilingual-parenting",
+  "priority": 2,
+  "title": "Alphabet Colouring Pages: Teaching Letters Through Colour (English and Marathi)",
+  "angle": "Letter recognition through colour-coding; multisensory.",
+  "queries": [
+   "how can i use alphabet coloring pages to teach letter recognition",
+   "what are some fun alphabet coloring pages for preschoolers"
+  ],
+  "id": 90,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 2,
+  "title": "Shapes and Colours Together: Easy Activities for Preschoolers",
+  "angle": "Shape sorting, shape hunts, colour-coded shapes.",
+  "queries": [
+   "can you suggest fun activities that combine shapes and colors for preschoolers",
+   "what are the best educational resources to teach children about shapes and colors"
+  ],
+  "id": 91,
+  "status": "pending"
+ },
+ {
+  "category": "colour-creativity",
+  "priority": 2,
+  "title": "Rainbow Colouring Ideas and the Simple Science Behind Rainbows",
+  "angle": "Order of colours, light, monsoon rainbows, craft.",
+  "queries": [
+   "how can i teach children about rainbows through coloring activities",
+   "what are some creative ways to use rainbow coloring pages for kids"
+  ],
+  "id": 92,
+  "status": "pending"
+ },
+ {
+  "category": "mindful-colouring",
+  "priority": 2,
+  "title": "Nature Colouring and Calm: Why Leaves, Flowers and Animals Feel Settling",
+  "angle": "Nature motifs, attention restoration in plain language, outdoor colour walks.",
+  "queries": [
+   "how does coloring nature scenes benefit relaxation and mindfulness",
+   "what are some popular themes for nature coloring pages"
+  ],
+  "id": 93,
+  "status": "pending"
+ },
+ {
+  "category": "calm-feelings",
+  "priority": 2,
+  "title": "Yoga and Colouring for Kids: A Gentle Mindfulness Pair",
+  "angle": "Simple poses with colouring pauses; safety; keep it playful.",
+  "queries": [
+   "how can i use yoga coloring pages to teach kids about mindfulness",
+   "are there any benefits of combining yoga and coloring activities for kids"
+  ],
+  "id": 94,
+  "status": "pending"
+ },
+ {
+  "category": "calm-feelings",
+  "priority": 2,
+  "title": "Teaching Kids About Emotions With Colouring Sheets",
+  "angle": "Feelings faces, colour choices, conversation starters; no characters needed.",
+  "queries": [
+   "how can i teach children about emotions using coloring sheets"
+  ],
+  "id": 95,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 2,
+  "title": "Easy Painting Ideas for Kids at Home",
+  "angle": "Low-prep ideas: sponge, finger, resist, salt; washable paints.",
+  "queries": [
+   "what are some easy painting ideas for kids to try at home",
+   "are there any fun painting games or activities for kids to enjoy"
+  ],
+  "id": 96,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 2,
+  "title": "Easy Drawing Ideas for Kids (and How to Encourage Young Artists)",
+  "angle": "Prompts, scribble-to-picture, no copying pressure.",
+  "queries": [
+   "what are some easy drawing ideas for kids to try at home",
+   "how can i encourage my child to develop their art skills"
+  ],
+  "id": 97,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 2,
+  "title": "How Arts and Crafts Help Children Develop (Plus Easy Preschool Projects)",
+  "angle": "Benefits honestly stated; 6 projects.",
+  "queries": [
+   "how do arts and crafts benefit children's development",
+   "what are some easy arts and crafts projects for preschoolers"
+  ],
+  "id": 98,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 2,
+  "title": "Watercolours for Young Children: Getting Started Without Tears",
+  "angle": "Set choice criteria, paper, brush control, simple techniques.",
+  "queries": [
+   "how can i introduce watercolor techniques to children",
+   "what are some easy watercolor painting ideas for kids",
+   "how to teach water coloring to kids step wise"
+  ],
+  "id": 99,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 2,
+  "title": "How to Teach a Child to Use Colour Pencils, Step by Step",
+  "angle": "Grip, pressure, direction, layering.",
+  "queries": [
+   "how to teach colour pencil coloring for kids",
+   "how to color properly using colored pencils for kids"
+  ],
+  "id": 100,
+  "status": "pending"
+ },
+ {
+  "category": "mindful-colouring",
+  "priority": 2,
+  "title": "How to Choose a Colouring Book for Relaxation (What Makes a Good One)",
+  "angle": "Criteria: paper, line weight, detail level, themes; not brand rankings.",
+  "queries": [
+   "what are the best coloring books for mental health",
+   "what are the best coloring books for relaxation and creativity"
+  ],
+  "id": 101,
+  "status": "pending"
+ },
+ {
+  "category": "mindful-colouring",
+  "priority": 2,
+  "title": "Colouring Supplies for Detailed Pages: Pencils, Pens or Markers?",
+  "angle": "Pros and cons, paper bleed, blending.",
+  "queries": [
+   "what are the best coloring supplies for adult coloring books",
+   "what types of coloring utensils are suitable for detailed coloring pages",
+   "can you suggest some effective coloring techniques for markers and colored pencils"
+  ],
+  "id": 102,
+  "status": "pending"
+ },
+ {
+  "category": "mindful-colouring",
+  "priority": 2,
+  "title": "Colouring Techniques for Beginners: Smooth, Even and Relaxed",
+  "angle": "Pressure, direction, layering, shading basics.",
+  "queries": [
+   "what are some effective coloring techniques for beginners",
+   "what are the best tips for coloring smoothly and evenly"
+  ],
+  "id": 103,
+  "status": "pending"
+ },
+ {
+  "category": "mindful-colouring",
+  "priority": 2,
+  "title": "Colouring Books for Teens and Tweens: What Actually Appeals",
+  "angle": "Older themes, detail, stress relief, no cringe.",
+  "queries": [
+   "what are the best coloring books for teenagers and tweens",
+   "what are some popular themes for coloring books for older children and teens"
+  ],
+  "id": 104,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 2,
+  "title": "Colouring Pages by Age: What Suits a 2, 4, 6, 8 and 10 Year Old",
+  "angle": "Complexity, themes, tools per age.",
+  "queries": [
+   "coloring pages 10 year olds",
+   "colouring pages for 6 year olds",
+   "color sheets for 2 year olds"
+  ],
+  "id": 105,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 2,
+  "title": "Do Colouring Worksheets Help Kids Learn to Read and Do Maths?",
+  "angle": "Honest about evidence; colour-by-code as practice; keep playful.",
+  "queries": [
+   "how do reading coloring worksheets help improve children's literacy and motor skills",
+   "what are the benefits of using color by math worksheets in early education"
+  ],
+  "id": 106,
+  "status": "pending"
+ },
+ {
+  "category": "screens-focus",
+  "priority": 2,
+  "title": "Online Colouring Games for Kids: What to Look For (and What to Skip)",
+  "angle": "Ads, timers, scoring; calm design; print option; tie to the free colour game.",
+  "queries": [
+   "free online coloring games",
+   "coloring games for kids",
+   "how can i improve my coloring skills using digital apps"
+  ],
+  "id": 107,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 2,
+  "title": "How to Make a Personalised Colouring Book at Home",
+  "angle": "Photos to line art, simple tools, printing and binding; copyright note.",
+  "queries": [
+   "how can i create my own personalized coloring book at home",
+   "can i turn my photos into coloring pages easily"
+  ],
+  "id": 108,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 1,
+  "title": "Teaching Kids About Healthy Food With Fruit and Vegetable Colouring",
+  "angle": "Colour the rainbow of produce; tasting game.",
+  "queries": [
+   "how can coloring pages of fruits and vegetables help children learn about nutrition",
+   "coloring books for kids fruits"
+  ],
+  "id": 109,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 1,
+  "title": "Family Colouring Pages and Family Art Nights",
+  "angle": "Family portrait pages, shared murals.",
+  "queries": [
+   "what are some creative ideas for family-themed coloring pages"
+  ],
+  "id": 110,
+  "status": "pending"
+ },
+ {
+  "category": "colour-creativity",
+  "priority": 2,
+  "title": "Do Newborns See Colour? What Babies Can See, Month by Month",
+  "angle": "Contrast first, colour develops over the first months; careful, general.",
+  "queries": [
+   "does newborn kids see colors",
+   "does new born kids see colors"
+  ],
+  "id": 111,
+  "status": "pending"
+ },
+ {
+  "category": "colour-creativity",
+  "priority": 2,
+  "title": "Can Colour-Blind Children Enjoy Colouring? A Practical Guide",
+  "angle": "Colour blindness is usually lifelong; labelled crayons, numbers, contrast; when to get an eye test.",
+  "queries": [
+   "can kids outgrow color blindness",
+   "why do some kids see color spots"
+  ],
+  "id": 112,
+  "status": "pending"
+ },
+ {
+  "category": "colour-creativity",
+  "priority": 2,
+  "title": "What Colour Helps Kids Learn and Focus? What We Actually Know",
+  "angle": "Honest: limited evidence; contrast, clutter, comfort matter more.",
+  "queries": [
+   "what color helps kids learn",
+   "how colors affect kids"
+  ],
+  "id": 113,
+  "status": "pending"
+ },
+ {
+  "category": "colour-creativity",
+  "priority": 2,
+  "title": "Why Do Leaves Change Colour? And Other Colour Questions Kids Ask",
+  "angle": "Kid-friendly answers: leaves, flowers, feathers, chameleons; colouring activity.",
+  "queries": [
+   "why do leaves change color for kids",
+   "how do flowers get their color for kids",
+   "why are birds feathers colorful for kids",
+   "how do chameleons change color for kids"
+  ],
+  "id": 114,
+  "status": "pending"
+ },
+ {
+  "category": "colour-creativity",
+  "priority": 2,
+  "title": "Indian Folk Art for Kids to Colour: Warli, Madhubani and Rangoli",
+  "angle": "Plain, respectful introductions; colouring ideas; mandalas.",
+  "queries": [
+   "indian art coloring book for kids",
+   "coloring books for kids india themed",
+   "coloring books for kids in india"
+  ],
+  "id": 115,
+  "status": "pending"
+ },
+ {
+  "category": "colour-creativity",
+  "priority": 1,
+  "title": "What Is a Child's Favourite Colour (and Why It Changes)",
+  "angle": "No fake stats; how to ask; preferences shift.",
+  "queries": [
+   "how to know your kids fav color",
+   "how to ask about favourite color from kids",
+   "what type of colors kids likes"
+  ],
+  "id": 116,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 1,
+  "title": "Draw and Colour the Seasons: Monsoon, Summer and Winter Scenes for Kids",
+  "angle": "Step-by-step simple scenes.",
+  "queries": [
+   "how to draw and color rainy season for kids",
+   "how to draw colorful easy summer picture for kids",
+   "how to draw colorful easy winter picture for kids"
+  ],
+  "id": 117,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 1,
+  "title": "How to Colour a Butterfly: A Step-by-Step Guide for Kids",
+  "angle": "Symmetry, patterns, layering.",
+  "queries": [
+   "how to color a butterfly for kids"
+  ],
+  "id": 118,
+  "status": "pending"
+ },
+ {
+  "category": "creative-play",
+  "priority": 1,
+  "title": "Are Crayons Safe for Toddlers? Choosing Non-Toxic Supplies",
+  "angle": "Labels, age grading, supervision; no brand claims.",
+  "queries": [
+   "are there safe and non-toxic coloring supplies for toddlers"
+  ],
+  "id": 119,
   "status": "pending"
  }
 ]
