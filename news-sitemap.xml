@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://themoonberryhouse.com/blog/can-colouring-help-with-anxiety</loc>
+    <news:news>
+      <news:publication>
+        <news:name>The Moonberry Journal</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-11-28</news:publication_date>
+      <news:title>Can Colouring Help With Anxiety? What It Can and Can't Do</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://themoonberryhouse.com/blog/how-colouring-helps-kids-develop</loc>
+    <news:news>
+      <news:publication>
+        <news:name>The Moonberry Journal</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-11-28</news:publication_date>
+      <news:title>How Colouring Helps Kids Develop: Fine Motor, Focus and Pre-Writing</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://themoonberryhouse.com/blog/colouring-for-one-and-two-year-olds</loc>
     <news:news>
       <news:publication>
